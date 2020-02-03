@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/hp_details_cardview"
+            android:layout_width="@dimen/three_hundred_sixty_four"
+            android:layout_height="@dimen/two_hundred_twenty_three"
+            android:layout_marginTop="@dimen/forty"
+            app:cardCornerRadius="@dimen/ten"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.659"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/month">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/hp_details"
+                    android:layout_width="108dp"
+                    android:layout_height="20dp"
+                    android:text="@string/hp_details"
+                    android:textSize="@dimen/fifteen_sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/new_hp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="@string/new_hp"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/reloan_hp"
+                    app:layout_constraintEnd_toStartOf="@+id/new_hp_label"
+                    app:layout_constraintHorizontal_bias="0.681"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hp_details" />
+
+                <TextView
+                    android:id="@+id/new_hp_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="100dp"
+                    android:text="@string/new_hp_label"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hp_details" />
+
+                <TextView
+                    android:id="@+id/reloan_hp_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="72dp"
+                    android:text="@string/reloan_hp_label"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/total_hp_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/new_hp_label" />
+
+                <TextView
+                    android:id="@+id/total_hp_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:text="@string/total_hp_label"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/hp_amount_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/reloan_hp_details" />
+
+                <TextView
+                    android:id="@+id/closed_hp_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="72dp"
+                    android:text="@string/closed_hp_label"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hp_amount_label" />
+
+                <TextView
+                    android:id="@+id/hp_amount_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="72dp"
+                    android:text="@string/hp_amount_label"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/closed_hp_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/total_hp_label" />
+
+                <TextView
+                    android:id="@+id/reloan_hp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reloan_hp"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/total_hp"
+                    app:layout_constraintEnd_toStartOf="@+id/reloan_hp_details"
+                    app:layout_constraintHorizontal_bias="0.56"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/new_hp" />
+
+                <TextView
+                    android:id="@+id/total_hp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="36dp"
+                    android:text="@string/total_hp"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/hp_amount"
+                    app:layout_constraintEnd_toStartOf="@+id/total_hp_label"
+                    app:layout_constraintHorizontal_bias="0.821"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/reloan_hp" />
+
+                <TextView
+                    android:id="@+id/hp_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/forty_five"
+                    android:text="@string/hp_amount"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/closed_hp"
+                    app:layout_constraintEnd_toStartOf="@+id/hp_amount_label"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/total_hp" />
+
+                <TextView
+                    android:id="@+id/closed_hp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/closed_hp"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/closed_hp_label"
+                    app:layout_constraintHorizontal_bias="0.56"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hp_amount" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/receipt_details"
+            android:layout_width="@dimen/three_hundred_sixty_four"
+            android:layout_height="@dimen/two_hundred_twenty_three"
+            android:layout_marginTop="@dimen/five"
+            app:cardCornerRadius="@dimen/ten"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.659"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hp_details_cardview"
+            app:layout_constraintVertical_bias="0.201">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/receipt_details_cardview"
+                    android:layout_width="137dp"
+                    android:layout_height="20dp"
+                    android:text="@string/receipt_details"
+                    android:textSize="@dimen/fifteen_sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:text="@string/cash"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/online"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/receipt_details_cardview" />
+
+                <TextView
+                    android:id="@+id/cash_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="116dp"
+                    android:text="@string/cash_label"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/online_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/receipt_details_cardview" />
+
+                <TextView
+                    android:id="@+id/online"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:text="@string/online"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/cheque"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cash" />
+
+                <TextView
+                    android:id="@+id/online_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="108dp"
+                    android:text="@string/online_label"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/cheque_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cash_label" />
+
+                <TextView
+                    android:id="@+id/cheque"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:text="@string/cheque"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/hp_amount_receipt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/online" />
+
+                <TextView
+                    android:id="@+id/cheque_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="100dp"
+                    android:text="@string/cheque_label"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/hp_amount_label_receipt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/online_label" />
+
+                <TextView
+                    android:id="@+id/hp_amount_receipt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:text="@string/hp_amount"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/collection_amount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cheque" />
+
+                <TextView
+                    android:id="@+id/hp_amount_label_receipt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="72dp"
+                    android:text="@string/hp_amount_label"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/collection_amount_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cheque_label" />
+
+                <TextView
+                    android:id="@+id/collection_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="@string/collection_amount"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/collection_amount_label"
+                    app:layout_constraintTop_toBottomOf="@+id/hp_amount_receipt" />
+
+                <TextView
+                    android:id="@+id/collection_amount_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="28dp"
+                    android:text="@string/collection_amount_label"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hp_amount_label_receipt" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

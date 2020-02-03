@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1027662667150",
+    "firebase_url": "https://mayura-a307e.firebaseio.com",
+    "project_id": "mayura-a307e",
+    "storage_bucket": "mayura-a307e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027662667150:android:c1f978b8d3d0fde6d758df",
+        "android_client_info": {
+          "package_name": "com.primemover.mayura"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027662667150-bof8qica44jmc1qgnchferkc8e8h7ar3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.primemover.mayura",
+            "certificate_hash": "40e32988c163a5e375df048ed098a6e26c6236f9"
+          }
+        },
+        {
+          "client_id": "1027662667150-0lq8lbmd482g9t412rce409vn98b5b67.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-meQSElmpH2Gd5ZP0_tPYSpq5S20rIPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027662667150-0lq8lbmd482g9t412rce409vn98b5b67.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
