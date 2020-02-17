@@ -6,12 +6,13 @@
 
     <TextView
         android:id="@+id/splash"
-        android:layout_width="279dp"
-        android:layout_height="198dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/splash_screen"
         android:textSize="@dimen/thirty_sp"
-        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

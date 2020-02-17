@@ -6,7 +6,7 @@
 
     <!-- Toolbar-->
 
-    <string name="home">Home</string>
+    <string name="home">Mayura Finance</string>
     <string name="pendinglist">Pending List</string>
     <string name="collectionlist">Collection</string>
     <string name="logout">Log out</string>
@@ -23,7 +23,10 @@
     <!--    activity_home-->
 
     <string name="pending_list">Pending List</string>
+    <string name="emicalc">EMI Calculator</string>
+    <string name="support">Support</string>
     <string name="collection">Collection</string>
+    <string name="address">address</string>
 
     <!--    activity_pendinglist-->
 
@@ -33,15 +36,15 @@
     <string name="name_label">name_label</string>
     <string name="mobile_no">Mobile</string>
     <string name="mobile_no_label">mobile_label</string>
-    <string name="emi">EMI</string>
+    <string name="emi">EMI:</string>
     <string name="emi_label">emi_label</string>
-    <string name="amount">Amount</string>
+    <string name="amount">Amount:</string>
     <string name="amount_label">amount_label</string>
     <string name="vehicle_no">Vehicle No</string>
     <string name="vehicle_no_label">vehicle_no_label</string>
-    <string name="pending_due">Pending Due</string>
+    <string name="pending_due">Pending Due:</string>
     <string name="pending_due_label">pending_due_label</string>
-    <string name="hp_no">Hp No</string>
+    <string name="hp_no">Hp No:</string>
     <string name="hp_no_label">hp_no_label</string>
     <string name="submit">Submit</string>
 
@@ -67,5 +70,24 @@
     <string name="cheque_label">cheque_label</string>
     <string name="collection_amount">Collection Amount</string>
     <string name="collection_amount_label">collection_amount_label</string>
+
+    <!--    activity_emi_calculator-->
+
+    <string name="calculate">Calculate</string>
+    <string name="emiCalculator">EMI Calculator</string>
+    <string name="loanAmount">Loan Amount</string>
+    <string name="duration">Duration</string>
+    <string name="interest">Interest Rate</string>
+    <string name="principal">Principal</string>
+    <string name="principal_label">principal_label</string>
+    <string name="interest_heading">Interest</string>
+    <string name="interest_label">interest_label</string>
+    <string name="total">Total</string>
+    <string name="total_label">total_label</string>
+
+    <!--    activity_support-->
+
+    <string name="support_webview">Website: http://primemoversolutions.in</string>
+    <string name="phone_number">Phone: +91 9842703312</string>
 
 </resources>

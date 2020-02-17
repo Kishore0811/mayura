@@ -5,8 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import com.primemover.mayura.constants.SharedPrefManager.Companion.SHARED_PREF_NAME
 import com.primemover.mayura.R
+import com.primemover.mayura.constants.SharedPrefManager.Companion.SHARED_PREF_NAME
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -20,7 +20,7 @@ class SplashScreenActivity : AppCompatActivity() {
         val handler = Handler()
         handler.postDelayed({
             this.mRedirect()
-        },10000)
+        }, 3000)
 
     }
 

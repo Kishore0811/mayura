@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,14 +17,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.659"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/month">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/hp_details"
+                    android:id="@+id/hp_details_textView"
                     android:layout_width="108dp"
                     android:layout_height="20dp"
                     android:text="@string/hp_details"
@@ -47,7 +46,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/new_hp_label"
                     app:layout_constraintHorizontal_bias="0.681"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/hp_details" />
+                    app:layout_constraintTop_toBottomOf="@+id/hp_details_textView" />
 
                 <TextView
                     android:id="@+id/new_hp_label"
@@ -58,7 +57,7 @@
                     android:text="@string/new_hp_label"
                     android:textSize="@dimen/fifteen_sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/hp_details" />
+                    app:layout_constraintTop_toBottomOf="@+id/hp_details_textView" />
 
                 <TextView
                     android:id="@+id/reloan_hp_details"
@@ -158,7 +157,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/receipt_details"
+            android:id="@+id/receipt_details_cardview"
             android:layout_width="@dimen/three_hundred_sixty_four"
             android:layout_height="@dimen/two_hundred_twenty_three"
             android:layout_marginTop="@dimen/five"
@@ -175,7 +174,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/receipt_details_cardview"
+                    android:id="@+id/receipt_details_textView"
                     android:layout_width="137dp"
                     android:layout_height="20dp"
                     android:text="@string/receipt_details"
@@ -195,7 +194,7 @@
                     android:textSize="@dimen/fifteen_sp"
                     app:layout_constraintBottom_toTopOf="@+id/online"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/receipt_details_cardview" />
+                    app:layout_constraintTop_toBottomOf="@+id/receipt_details_textView" />
 
                 <TextView
                     android:id="@+id/cash_label"
@@ -206,7 +205,7 @@
                     android:textSize="@dimen/fifteen_sp"
                     app:layout_constraintBottom_toTopOf="@+id/online_label"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/receipt_details_cardview" />
+                    app:layout_constraintTop_toBottomOf="@+id/receipt_details_textView" />
 
                 <TextView
                     android:id="@+id/online"

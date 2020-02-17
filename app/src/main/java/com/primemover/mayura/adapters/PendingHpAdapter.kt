@@ -15,11 +15,11 @@ import com.primemover.mayura.model.PendingHpResponse
 import kotlinx.android.synthetic.main.activity_pendinglist.view.*
 
 class PendingHpAdapter(private val context: Context, private var pending : ArrayList<PendingHpResponse>):
-        RecyclerView.Adapter<PendingHpAdapter.PendinghpViewHolder>() {
+        RecyclerView.Adapter<PendingHpAdapter.PendingHpViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendinghpViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingHpViewHolder {
 
-        return PendinghpViewHolder(
+        return PendingHpViewHolder(
                 LayoutInflater.from(parent.context)
                         .inflate(R.layout.activity_pendinglist, parent, false),context, pending)
 
@@ -28,7 +28,8 @@ class PendingHpAdapter(private val context: Context, private var pending : Array
     override fun getItemCount(): Int = pending.size
 
 
-    override fun onBindViewHolder(holder: PendinghpViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PendingHpViewHolder, position: Int) {
+
         val pendinglist = pending[position]
 
         holder.view.hp_no_label.text = pendinglist.hp_no
@@ -41,9 +42,9 @@ class PendingHpAdapter(private val context: Context, private var pending : Array
 
     }
 
-     class PendinghpViewHolder(val view: View,
-                               private val context: Context,
-                               private val pending: ArrayList<PendingHpResponse>)
+    class PendingHpViewHolder(val view: View,
+                              private val context: Context,
+                              private val pending: ArrayList<PendingHpResponse>)
          : RecyclerView.ViewHolder(view), View.OnClickListener{
 
          init {

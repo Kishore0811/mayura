@@ -35,14 +35,14 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewPending"
             android:layout_width="match_parent"
-            android:layout_height="565dp"
-            android:paddingBottom="15dp"
+            android:layout_height="0dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/from_to_view"
-            app:layout_constraintVertical_bias="0.145" />
+            app:layout_constraintVertical_bias="0.272" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/from_to_view"
@@ -80,14 +80,13 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/to_text_input_layout"
-                    android:layout_width="75dp"
-                    android:layout_height="@dimen/eighty_six"
-                    android:layout_marginStart="28dp"
+                    android:layout_width="85dp"
+                    android:layout_height="84dp"
+                    android:layout_marginStart="16dp"
                     app:errorEnabled="true"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/from_text_input_Layout"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.416">
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/to"
@@ -101,7 +100,7 @@
                     android:id="@+id/submit"
                     android:layout_width="@dimen/one_hundred_thirty_four"
                     android:layout_height="@dimen/fifty_two"
-                    android:layout_marginEnd="28dp"
+                    android:layout_marginEnd="20dp"
                     android:background="@drawable/rounded_button"
                     android:text="@string/submit"
                     android:textColor="@color/colorWhite"
@@ -109,10 +108,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/to_text_input_layout"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.347" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

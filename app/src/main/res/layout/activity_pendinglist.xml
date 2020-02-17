@@ -7,11 +7,13 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/customer_info"
+            android:id="@+id/customer_info_cardView"
             android:layout_width="0dp"
             android:layout_height="@dimen/two_hundred_eleven"
-            android:layout_marginBottom="@dimen/ten"
-            app:cardBackgroundColor="@color/lightPink"
+            android:layout_marginLeft="@dimen/five"
+            android:layout_marginTop="@dimen/ten"
+            android:layout_marginRight="@dimen/five"
+            android:layout_marginBottom="@dimen/fifteen"
             app:cardCornerRadius="@dimen/ten"
             app:cardElevation="@dimen/eight"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -25,197 +27,217 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
                 <ImageView
-                    android:id="@+id/customer_image"
+                    android:id="@+id/customer_imageView"
                     android:layout_width="@dimen/hundred_dp"
                     android:layout_height="@dimen/hundred_dp"
-                    android:layout_marginStart="@dimen/sixteen"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginBottom="24dp"
                     android:contentDescription="@string/todo"
                     android:src="@drawable/ic_user"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.51" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <ImageView
                     android:id="@+id/phone"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_marginTop="88dp"
+                    android:layout_marginTop="56dp"
                     android:contentDescription="@string/todo"
                     android:src="@drawable/ic_call"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.473"
+                    app:layout_constraintHorizontal_bias="0.636"
                     app:layout_constraintStart_toEndOf="@+id/mobile_no_label"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.022" />
+                    app:layout_constraintVertical_bias="0.4" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="@dimen/five"
+                    android:paddingEnd="@dimen/five"
+                    android:text="@string/name"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintStart_toEndOf="@+id/customer_imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/amount_label" />
 
                 <TextView
                     android:id="@+id/name_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
                     android:maxLines="2"
                     android:text="@string/name_label"
                     android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/vehicle_no_label"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/name"
-                    app:layout_constraintTop_toBottomOf="@+id/hp_no_label" />
-
-                <TextView
-                    android:id="@+id/emi_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/emi_label"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/pending_due_label"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/emi"
-                    app:layout_constraintTop_toBottomOf="@+id/amount_label" />
-
-                <TextView
-                    android:id="@+id/emi"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:paddingStart="@dimen/five"
-                    android:paddingEnd="@dimen/five"
-                    android:text="@string/emi"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/pending_due"
-                    app:layout_constraintStart_toEndOf="@+id/customer_image"
-                    app:layout_constraintTop_toBottomOf="@+id/amount" />
-
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:paddingStart="@dimen/five"
-                    android:paddingEnd="@dimen/five"
-                    android:text="@string/name"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/vehicle_no"
-                    app:layout_constraintStart_toEndOf="@+id/customer_image"
-                    app:layout_constraintTop_toBottomOf="@+id/hp_no_label" />
+                    app:layout_constraintTop_toBottomOf="@+id/emi" />
 
                 <TextView
                     android:id="@+id/amount"
-                    android:layout_width="120dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:elevation="10dp"
                     android:paddingStart="@dimen/five"
                     android:paddingEnd="@dimen/five"
                     android:text="@string/amount"
+                    android:textColor="@color/colorWhite"
                     android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/emi"
-                    app:layout_constraintStart_toEndOf="@+id/customer_image"
-                    app:layout_constraintTop_toBottomOf="@+id/mobile_no" />
+                    app:layout_constraintBottom_toTopOf="@+id/customer_imageView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/emi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="32dp"
+                    android:elevation="10dp"
+                    android:paddingStart="@dimen/five"
+                    android:paddingEnd="@dimen/five"
+                    android:text="@string/emi"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintStart_toStartOf="@+id/pending_due"
+                    app:layout_constraintTop_toTopOf="@+id/pending_due" />
+
+                <TextView
+                    android:id="@+id/emi_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="36dp"
+                    android:elevation="10dp"
+                    android:text="@string/emi_label"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintBottom_toTopOf="@+id/phone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/emi"
+                    app:layout_constraintTop_toBottomOf="@+id/pending_due_label"
+                    app:layout_constraintVertical_bias="0.6" />
 
                 <TextView
                     android:id="@+id/amount_label"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:elevation="10dp"
                     android:text="@string/amount_label"
+                    android:textColor="@color/colorWhite"
                     android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/emi_label"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/amount"
-                    app:layout_constraintTop_toBottomOf="@+id/mobile_no_label" />
-
-                <TextView
-                    android:id="@+id/mobile_no"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:paddingStart="@dimen/five"
-                    android:paddingEnd="@dimen/five"
-                    android:text="@string/mobile_no"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/amount"
-                    app:layout_constraintStart_toEndOf="@+id/customer_image"
-                    app:layout_constraintTop_toBottomOf="@+id/vehicle_no" />
+                    app:layout_constraintTop_toBottomOf="@+id/hp_no_label" />
 
                 <TextView
                     android:id="@+id/mobile_no_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="@string/mobile_no_label"
                     android:textAlignment="viewStart"
                     android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/amount_label"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/mobile_no"
-                    app:layout_constraintTop_toBottomOf="@+id/vehicle_no_label" />
+                    app:layout_constraintTop_toBottomOf="@+id/name_label" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="71dp"
+                    android:layout_marginBottom="140dp"
+                    android:background="@color/colorAccent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/vehicle_no"
-                    android:layout_width="120dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
                     android:paddingStart="@dimen/five"
                     android:paddingEnd="@dimen/five"
                     android:text="@string/vehicle_no"
                     android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/mobile_no"
-                    app:layout_constraintStart_toEndOf="@+id/customer_image"
+                    app:layout_constraintStart_toEndOf="@+id/customer_imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/mobile_no" />
+
+                <TextView
+                    android:id="@+id/mobile_no"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="@dimen/five"
+                    android:paddingEnd="@dimen/five"
+                    android:text="@string/mobile_no"
+                    android:textSize="@dimen/fifteen_sp"
+                    app:layout_constraintStart_toEndOf="@+id/customer_imageView"
                     app:layout_constraintTop_toBottomOf="@+id/name" />
 
                 <TextView
                     android:id="@+id/vehicle_no_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="@string/vehicle_no_label"
                     android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/mobile_no_label"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/vehicle_no"
-                    app:layout_constraintTop_toBottomOf="@+id/name_label" />
+                    app:layout_constraintTop_toBottomOf="@+id/mobile_no_label" />
 
                 <TextView
                     android:id="@+id/pending_due"
-                    android:layout_width="120dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="8dp"
                     android:paddingStart="@dimen/five"
                     android:paddingEnd="@dimen/five"
                     android:text="@string/pending_due"
+                    android:textColor="@color/colorWhite"
                     android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/customer_image"
-                    app:layout_constraintTop_toBottomOf="@+id/emi" />
+                    app:layout_constraintStart_toEndOf="@+id/hp_no_label"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/pending_due_label"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:text="@string/pending_due_label"
+                    android:textColor="@color/colorWhite"
                     android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/pending_due"
-                    app:layout_constraintTop_toBottomOf="@+id/emi_label" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/hp_no_label"
-                    android:layout_width="163dp"
-                    android:layout_height="30dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:elevation="10dp"
                     android:text="@string/hp_no_label"
-                    android:textSize="20sp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.532"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

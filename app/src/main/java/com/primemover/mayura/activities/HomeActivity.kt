@@ -29,10 +29,12 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
         setSupportActionBar(binding.toolbar)
-        binding.pendinglist.setOnClickListener(this)
-        binding.collection.setOnClickListener(this)
-        val str = ("Mayura Finance \n1518/2,\nvenkittapuram(signal),\nThadagam Main Rd,\nnear avila convent,\nCoimbatore-641025")
-        address.setText(str)
+        binding.pendingListCardView.setOnClickListener(this)
+        binding.emiCalcCardView.setOnClickListener(this)
+        binding.supportCardView.setOnClickListener(this)
+        binding.collectionCardView.setOnClickListener(this)
+        val str = ("1518/2,venkittapuram(signal),\nThadagam Main Rd,\nnear avila convent,\nCoimbatore-641025.")
+        address_textView.text = str
 
 //        val crashButton = Button(this)
 //        crashButton.text = "Crash!"
@@ -46,15 +48,24 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.pendinglist -> {
-                val intent = Intent(this, PendlinglistActivity::class.java)
+            R.id.pending_list_cardView -> {
+                val intent = Intent(this, PendingListActivity::class.java)
                 startActivity(intent)
             }
 
-            R.id.collection -> {
+            R.id.emiCalc_cardView -> {
+
+                val i = Intent(this, EmiCalculatorActivity::class.java)
+                startActivity(i)
+            }
+
+            R.id.support_cardView -> {
+                val ie = Intent(this, SupportActivity::class.java)
+                startActivity(ie)
+
+            }
+            R.id.collection_cardView -> {
                 Toast.makeText(this, "Yet to implement", Toast.LENGTH_SHORT).show()
-//                val i = Intent(this, CollectionActivity::class.java)
-//                startActivity(i)
             }
 
         }
