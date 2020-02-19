@@ -95,7 +95,7 @@ class EmiCalculatorActivity : AppCompatActivity(), View.OnClickListener, TextWat
 
 
     override fun afterTextChanged(s: Editable?) {
-        when (view.id) {
+        when (s.hashCode()) {
             R.id.loanAmount_text_input_layout -> loanAmount_text_input_layout.error = null
             R.id.duration_text_input_layout -> duration_text_input_layout.error = null
             R.id.interest_text_input_layout -> interest_text_input_layout.error = null
