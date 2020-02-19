@@ -79,12 +79,12 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener {
                                     if (t is SocketTimeoutException) {
 
                                         Toast.makeText(this@PendingListActivity,
-                                                "Connection Timed out", Toast.LENGTH_SHORT)
+                                                getString(R.string.connection_out), Toast.LENGTH_SHORT)
                                                 .show()
 
 
                                     } else {
-                                        Snackbar.make(v, "You are Offline", Snackbar.LENGTH_LONG)
+                                        Snackbar.make(v, getString(R.string.internet_off), Snackbar.LENGTH_LONG)
                                                 .show()
                                     }
                                 }
@@ -95,6 +95,7 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener {
                                     progressBar.visibility = View.GONE
                                     recyclerViewPending.visibility = View.VISIBLE
                                     //Log.i("Response Pending:", response.body().toString())
+
                                     //Storing the response
                                     val pendinglist = response.body()
 

@@ -41,14 +41,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 val password = binding.password.text.toString().trim()
 
                 if (username.isEmpty()) {
-                    binding.usernameTextInputLayout.error = "Username Required"
+                    binding.usernameTextInputLayout.error = getString(R.string.username_error)
                     binding.username.requestFocus()
                     return
                 } else {
                     binding.usernameTextInputLayout.error = null
                 }
                 if (password.isEmpty()) {
-                    binding.passwordTextInputLayout.error = "Password Required"
+                    binding.passwordTextInputLayout.error = getString(R.string.error_password)
                     binding.password.requestFocus()
                     return
                 } else {
@@ -63,11 +63,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
                                 // Timeout exception
                                 if (t is SocketTimeoutException) {
-                                    Toast.makeText(this@LoginActivity, "Connection Timed out", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(this@LoginActivity, getString(R.string.connection_out), Toast.LENGTH_SHORT).show()
                                 }
 
                                 // Internet is turned off
-                                Snackbar.make(v, "You are Offline", Snackbar.LENGTH_LONG)
+                                Snackbar.make(v, getString(R.string.internet_off), Snackbar.LENGTH_LONG)
                                         .show()
 
                                 // To clear the input fields
@@ -85,7 +85,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
                                     //Log.i("kishore", storeUser.toString())
 
-                                    // Storing user in Shared Preferences
+                                    // Storing user credentials in Shared Preferences
                                     SharedPrefManager.getInstance(this@LoginActivity)
                                             .saveUser(storeUser!!)
 

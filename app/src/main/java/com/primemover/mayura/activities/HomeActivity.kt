@@ -114,7 +114,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         ok.setOnClickListener {
             mDialog.dismiss()
 
-            Toast.makeText(this, "logout", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_logout), Toast.LENGTH_SHORT).show()
             SharedPrefManager.getInstance(mCtx = this).clear()
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

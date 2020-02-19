@@ -10,9 +10,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/hp_details_cardview"
-            android:layout_width="@dimen/three_hundred_sixty_four"
-            android:layout_height="@dimen/two_hundred_twenty_three"
-            android:layout_marginTop="@dimen/forty"
+            android:layout_width="364dp"
+            android:layout_height="223dp"
+            android:layout_marginTop="40dp"
             app:cardCornerRadius="@dimen/ten"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.659"
@@ -132,7 +132,7 @@
                     android:id="@+id/hp_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/forty_five"
+                    android:layout_marginStart="45dp"
                     android:text="@string/hp_amount"
                     android:textSize="@dimen/fifteen_sp"
                     app:layout_constraintBottom_toTopOf="@+id/closed_hp"
@@ -158,8 +158,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/receipt_details_cardview"
-            android:layout_width="@dimen/three_hundred_sixty_four"
-            android:layout_height="@dimen/two_hundred_twenty_three"
+            android:layout_width="364dp"
+            android:layout_height="223dp"
             android:layout_marginTop="@dimen/five"
             app:cardCornerRadius="@dimen/ten"
             app:layout_constraintBottom_toBottomOf="parent"

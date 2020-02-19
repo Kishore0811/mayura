@@ -3,14 +3,16 @@
     <string name="splash_screen">MAYURA FINANCE</string>
     <string name="todo">TODO</string>
 
-
     <!-- Toolbar-->
 
     <string name="home">Mayura Finance</string>
     <string name="pendinglist">Pending List</string>
     <string name="collectionlist">Collection</string>
+
+    <!--    logout_dialog-->
+
     <string name="logout">Log out</string>
-    <string name="are_you_sure_want_to_logout">Are you sure want to Logout</string>
+    <string name="are_you_sure_want_to_logout">Are you sure want to Logout?</string>
     <string name="cancel">Cancel</string>
     <string name="okay">OK</string>
 
@@ -19,6 +21,13 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+
+    <!--    LoginActivity-->
+
+    <string name="username_error">Username Required</string>
+    <string name="error_password">Password Required</string>
+    <string name="connection_out">Connection Timed out</string>
+    <string name="internet_off">You are Offline</string>
 
     <!--    activity_home-->
 
@@ -43,7 +52,7 @@
     <string name="vehicle_no">Vehicle No</string>
     <string name="vehicle_no_label">vehicle_no_label</string>
     <string name="pending_due">Pending Due:</string>
-    <string name="pending_due_label">pending_due_label</string>
+    <string name="pending_due_label">pd_label</string>
     <string name="hp_no">Hp No:</string>
     <string name="hp_no_label">hp_no_label</string>
     <string name="submit">Submit</string>
@@ -89,5 +98,6 @@
 
     <string name="support_webview">Website: http://primemoversolutions.in</string>
     <string name="phone_number">Phone: +91 9842703312</string>
+    <string name="toast_logout">Logged Out</string>
 
 </resources>

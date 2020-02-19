@@ -1,6 +1,8 @@
 package com.primemover.mayura.activities
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -9,9 +11,10 @@ import com.primemover.mayura.R
 import com.primemover.mayura.constants.Utils.hideSoftKeyBoard
 import com.primemover.mayura.databinding.ActivityEmiCalculatorBinding
 import kotlinx.android.synthetic.main.activity_emi_calculator.*
+import kotlinx.android.synthetic.main.activity_pendinglist.*
 import kotlin.math.round
 
-class EmiCalculatorActivity : AppCompatActivity(), View.OnClickListener {
+class EmiCalculatorActivity : AppCompatActivity(), View.OnClickListener, TextWatcher {
     lateinit var binding: ActivityEmiCalculatorBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,20 +38,27 @@ class EmiCalculatorActivity : AppCompatActivity(), View.OnClickListener {
                 val duration = binding.duration.text.toString()
                 val interest = binding.interestRate.text.toString()
 
-                if (loanAmount.isEmpty()) {
-                    binding.loanAmountTextInputLayout.error = "Loan Amount is required"
-                    binding.loanAmountTextInputLayout.requestFocus()
-                    return
-                }
-                if (duration.isEmpty()) {
-                    binding.durationTextInputLayout.error = "Duration is required"
-                    binding.durationTextInputLayout.requestFocus()
-                    return
-                }
-                if (interest.isEmpty()) {
-                    binding.interestTextInputLayout.error = "Interest is required"
-                    binding.interestTextInputLayout.requestFocus()
-                    return
+                when {
+                    loanAmount.isEmpty() -> {
+                        binding.loanAmountTextInputLayout.error = "Loan Amount is required"
+                        binding.loanAmountTextInputLayout.requestFocus()
+                        return
+                    }
+                    duration.isEmpty() -> {
+                        binding.durationTextInputLayout.error = "Duration is required"
+                        binding.durationTextInputLayout.requestFocus()
+                        return
+                    }
+                    interest.isEmpty() -> {
+                        binding.interestTextInputLayout.error = "Interest is required"
+                        binding.interestTextInputLayout.requestFocus()
+                        return
+                    }
+                    else -> {
+                        binding.durationTextInputLayout.error = null
+                        binding.loanAmountTextInputLayout.error = null
+                        binding.interestTextInputLayout.error = null
+                    }
                 }
                 hideSoftKeyBoard(this, v)
                 totalCard.visibility = View.VISIBLE
@@ -83,5 +93,22 @@ class EmiCalculatorActivity : AppCompatActivity(), View.OnClickListener {
         return super.onOptionsItemSelected(item)
     }
 
+
+    override fun afterTextChanged(s: Editable?) {
+        when (view.id) {
+            R.id.loanAmount_text_input_layout -> loanAmount_text_input_layout.error = null
+            R.id.duration_text_input_layout -> duration_text_input_layout.error = null
+            R.id.interest_text_input_layout -> interest_text_input_layout.error = null
+        }
+
+    }
+
+    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
 }

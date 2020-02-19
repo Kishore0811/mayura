@@ -25,7 +25,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun mRedirect() {
-        val sp = getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE )
+        val sp = getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
         val token = sp.getString("token", "")
 
         if (token != null && token != "") {
@@ -34,6 +34,7 @@ class SplashScreenActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         } else {
+
             val intent = Intent(mContext, LoginActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)

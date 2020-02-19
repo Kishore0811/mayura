@@ -5,6 +5,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         android:background="@mipmap/ic_banner">
 
         <androidx.appcompat.widget.Toolbar
@@ -12,49 +13,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:title="@string/splash_screen"
-            app:titleMarginStart="130dp"
+            app:layout_constraintBottom_toTopOf="@id/logo"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:title="@string/splash_screen"
+            app:titleMarginStart="@dimen/hundred"
             app:titleTextColor="@color/colorWhite" />
-
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="@dimen/hundred"
+            android:layout_height="@dimen/hundred"
+            android:layout_marginTop="@dimen/ten"
             android:contentDescription="@string/todo"
             android:src="@mipmap/ic_logo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/login_cardView"
-            android:layout_width="@dimen/three_hundred_thirty_seven"
-            android:layout_height="@dimen/four_hundred_five"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/twenty_five"
+            android:layout_marginRight="@dimen/twenty_five"
+            android:layout_marginBottom="@dimen/sixty"
+            android:padding="@dimen/five"
             app:cardCornerRadius="@dimen/ten"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo"
-            app:layout_constraintVertical_bias="0.2">
+            app:layout_constraintTop_toBottomOf="@+id/logo">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
+                android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/username_text_input_layout"
-                    android:layout_width="@dimen/two_hundred_twenty_nine"
-                    android:layout_height="@dimen/seventy_nine"
-                    android:layout_marginTop="@dimen/eighty_four"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/seventy"
+                    android:layout_marginTop="@dimen/sixty"
+                    android:layout_marginRight="@dimen/seventy"
+                    app:layout_constraintBottom_toTopOf="@+id/password_text_input_layout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -70,15 +73,16 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/password_text_input_layout"
-                    android:layout_width="@dimen/two_hundred_twenty_nine"
-                    android:layout_height="@dimen/seventy_nine"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/seventy"
+                    android:layout_marginRight="@dimen/seventy"
+                    android:padding="@dimen/five"
                     app:errorEnabled="true"
                     app:layout_constraintBottom_toTopOf="@+id/submit"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.482"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/username_text_input_layout"
-                    app:layout_constraintVertical_bias="0.27"
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -91,21 +95,17 @@
 
                 <Button
                     android:id="@+id/submit"
-                    android:layout_width="@dimen/one_hundred_thirty_four"
-                    android:layout_height="@dimen/fifty_two"
-                    android:layout_marginBottom="52dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/fifty"
                     android:background="@drawable/rounded_button"
                     android:text="@string/login"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.497"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/password_text_input_layout" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
