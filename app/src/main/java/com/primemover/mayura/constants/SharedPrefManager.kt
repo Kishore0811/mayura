@@ -1,7 +1,7 @@
 package com.primemover.mayura.constants
 
 import android.content.Context
-import com.primemover.mayura.model.LoginResponse
+import com.primemover.mayura.login.LoginResponse
 
 class SharedPrefManager constructor (private val mCtx: Context) {
 

@@ -1,12 +1,12 @@
 package com.primemover.mayura.api
 
 
-import com.primemover.mayura.model.LoginResponse
+import com.primemover.mayura.login.LoginResponse
+import com.primemover.mayura.pending.PendingHpResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
-import com.primemover.mayura.model.PendingHpResponse
 
 interface APIInterface {
 

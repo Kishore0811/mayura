@@ -24,10 +24,12 @@
 
     <!--    LoginActivity-->
 
-    <string name="username_error">Username Required</string>
-    <string name="error_password">Password Required</string>
+    <string name="username_error">Username required</string>
+    <string name="password_error">Password required</string>
     <string name="connection_out">Connection Timed out</string>
     <string name="internet_off">You are Offline</string>
+    <string name="empty_fields">Fields cannot be empty</string>
+    <string name="wrong_credentials">Wrong credentials</string>
 
     <!--    activity_home-->
 
@@ -36,6 +38,13 @@
     <string name="support">Support</string>
     <string name="collection">Collection</string>
     <string name="address">address</string>
+    <string name="toast_logout">Logged Out</string>
+
+    <!--    PendingListActivity-->
+
+    <string name="from_error">From Required</string>
+    <string name="to_error">To Required</string>
+    <string name="from_to_error">From should be less than or equal to To</string>
 
     <!--    activity_pendinglist-->
 
@@ -94,10 +103,16 @@
     <string name="total">Total</string>
     <string name="total_label">total_label</string>
 
+    <!--    EmiCalculatorActivity-->
+
+    <string name="loan_error">Loan amount required</string>
+    <string name="duration_error">Duration required</string>
+    <string name="interest_error">Interest required</string>
+
     <!--    activity_support-->
 
     <string name="support_webview">Website: http://primemoversolutions.in</string>
     <string name="phone_number">Phone: +91 9842703312</string>
-    <string name="toast_logout">Logged Out</string>
+    <string name="version">Version: 1.0.0</string>
 
 </resources>

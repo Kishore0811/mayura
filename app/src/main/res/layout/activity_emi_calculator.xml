@@ -22,7 +22,6 @@
             android:layout_width="@dimen/zero"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/twenty"
-            android:padding="@dimen/ten"
             app:cardCornerRadius="@dimen/five"
             app:cardElevation="@dimen/five"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +30,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:padding="@dimen/fifteen_dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/loanAmount_text_input_layout"
@@ -60,7 +60,7 @@
                     android:layout_marginLeft="@dimen/thirty"
                     android:layout_marginRight="@dimen/thirty"
                     app:errorEnabled="true"
-                    app:layout_constraintBottom_toTopOf="@+id/interest_text_input_layout"
+                    app:layout_constraintBottom_toTopOf="@+id/interest_rate_text_input_layout"
                     app:layout_constraintEnd_toStartOf="@+id/calculate"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/loanAmount_text_input_layout">
@@ -74,7 +74,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/interest_text_input_layout"
+                    android:id="@+id/interest_rate_text_input_layout"
                     android:layout_width="@dimen/zero"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/thirty"
@@ -113,7 +113,6 @@
             android:layout_width="@dimen/zero"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/twenty"
-            android:visibility="gone"
             app:cardCornerRadius="@dimen/five"
             app:cardElevation="@dimen/five"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -146,8 +145,6 @@
                     android:text="@string/principal_label"
                     android:textSize="@dimen/twenty_sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@id/principal"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -171,8 +168,6 @@
                     android:text="@string/interest_label"
                     android:textSize="@dimen/twenty_sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@id/interest"
                     app:layout_constraintTop_toBottomOf="@+id/principal_label" />
 
@@ -207,8 +202,6 @@
                     android:text="@string/total_label"
                     android:textSize="@dimen/twenty_sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@id/total"
                     app:layout_constraintTop_toBottomOf="@+id/interest_label" />
 

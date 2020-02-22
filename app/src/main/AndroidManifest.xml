@@ -15,27 +15,27 @@
         android:theme="@style/AppThemeNoActionBar"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activities.SupportActivity"
+            android:name=".support.SupportActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activities.EmiCalculatorActivity"
+            android:name=".emiCalculator.EmiCalculatorActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activities.CollectionActivity"
+            android:name=".collection.CollectionActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activities.PendingListActivity"
+            android:name=".pending.PendingListActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activities.HomeActivity"
+            android:name=".home.HomeActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activities.SplashScreenActivity"
+            android:name=".splashscreen.SplashScreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,7 +47,7 @@
         </activity>
 
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".login.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan" />
     </application>
