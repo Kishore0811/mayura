@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero"
+            android:background="@color/colorAccent"
+            android:theme="@style/ToolbarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/hpdetails"
+            app:titleTextColor="@color/colorWhite" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_hp"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten"
+                    app:cardCornerRadius="@dimen/ten"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintBottom_toTopOf="@+id/card_vehicle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/text_hp_heading"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:padding="@dimen/ten"
+                            android:text="@string/hp_details"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/text_status"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/status"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_amount"
+                            app:layout_constraintEnd_toStartOf="@id/text_status_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_hp_heading" />
+
+                        <TextView
+                            android:id="@+id/text_status_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/status_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_amount_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_status"
+                            app:layout_constraintTop_toBottomOf="@id/text_hp_heading" />
+
+                        <TextView
+                            android:id="@+id/text_amount"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/hp_amount"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_no_of_month"
+                            app:layout_constraintEnd_toStartOf="@id/text_amount_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_status" />
+
+                        <TextView
+                            android:id="@+id/text_amount_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/amount_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_no_of_month_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_amount"
+                            app:layout_constraintTop_toBottomOf="@id/text_status_label" />
+
+                        <TextView
+                            android:id="@+id/text_no_of_month"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/no_of_month"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_interest_rate"
+                            app:layout_constraintEnd_toStartOf="@id/text_no_of_month_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_amount" />
+
+                        <TextView
+                            android:id="@+id/text_no_of_month_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/no_of_month_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_interest_rate_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_no_of_month"
+                            app:layout_constraintTop_toBottomOf="@id/text_amount_label" />
+
+                        <TextView
+                            android:id="@+id/text_interest_rate"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/interest"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintEnd_toStartOf="@id/text_interest_rate_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_no_of_month" />
+
+                        <TextView
+                            android:id="@+id/text_interest_rate_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/interest_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_start_date_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_interest_rate"
+                            app:layout_constraintTop_toBottomOf="@id/text_no_of_month_label" />
+
+                        <TextView
+                            android:id="@+id/text_start_date"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/start_date"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_emi"
+                            app:layout_constraintEnd_toStartOf="@id/text_start_date_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_interest_rate" />
+
+                        <TextView
+                            android:id="@+id/text_start_date_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/start_date_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_emi_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_start_date"
+                            app:layout_constraintTop_toBottomOf="@id/text_interest_rate_label" />
+
+                        <TextView
+                            android:id="@+id/text_emi"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/emi_hpdetails"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_principal"
+                            app:layout_constraintEnd_toStartOf="@id/text_emi_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_start_date" />
+
+                        <TextView
+                            android:id="@+id/text_emi_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/emi_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_principal_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_emi"
+                            app:layout_constraintTop_toBottomOf="@id/text_start_date_label" />
+
+                        <TextView
+                            android:id="@+id/text_principal"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/principal"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_pending_due"
+                            app:layout_constraintEnd_toStartOf="@id/text_principal_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_emi" />
+
+                        <TextView
+                            android:id="@+id/text_principal_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/principal_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_pending_due_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_principal"
+                            app:layout_constraintTop_toBottomOf="@id/text_emi_label" />
+
+                        <TextView
+                            android:id="@+id/text_pending_due"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/hp_pending_due"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/text_pending_due_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_principal" />
+
+                        <TextView
+                            android:id="@+id/text_pending_due_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/pending_due_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_pending_due"
+                            app:layout_constraintTop_toBottomOf="@id/text_principal_label" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_vehicle"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten"
+                    app:cardCornerRadius="@dimen/ten"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_hp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/image_vehicle"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/ic_vehicle"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_vehicle_heading" />
+
+                        <TextView
+                            android:id="@+id/text_vehicle_heading"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:padding="@dimen/ten"
+                            android:text="@string/vehicle_details"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/text_vehicle_name"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/vehicle_name"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_vehicle_color"
+                            app:layout_constraintEnd_toStartOf="@id/text_vehicle_name_label"
+                            app:layout_constraintStart_toEndOf="@+id/image_vehicle"
+                            app:layout_constraintTop_toBottomOf="@id/text_vehicle_heading" />
+
+                        <TextView
+                            android:id="@+id/text_vehicle_name_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/vehicle_name_label"
+                            app:layout_constraintBottom_toTopOf="@id/text_vehicle_color_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_vehicle_name"
+                            app:layout_constraintTop_toBottomOf="@id/text_vehicle_heading" />
+
+                        <TextView
+                            android:id="@+id/text_vehicle_color"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/vehicle_color"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_vehicle_make"
+                            app:layout_constraintEnd_toStartOf="@id/text_vehicle_color_label"
+                            app:layout_constraintStart_toEndOf="@+id/image_vehicle"
+                            app:layout_constraintTop_toBottomOf="@id/text_vehicle_name" />
+
+                        <TextView
+                            android:id="@+id/text_vehicle_color_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/vehicle_color_label"
+                            app:layout_constraintBottom_toTopOf="@id/text_vehicle_make_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_vehicle_color"
+                            app:layout_constraintTop_toBottomOf="@id/text_vehicle_name_label" />
+
+                        <TextView
+                            android:id="@+id/text_vehicle_make"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/vehicle_make"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_vehicle_number"
+                            app:layout_constraintEnd_toStartOf="@id/text_vehicle_make_label"
+                            app:layout_constraintStart_toEndOf="@+id/image_vehicle"
+                            app:layout_constraintTop_toBottomOf="@id/text_vehicle_color" />
+
+                        <TextView
+                            android:id="@+id/text_vehicle_make_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/vehicle_color_label"
+                            app:layout_constraintBottom_toTopOf="@id/text_vehicle_number_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_vehicle_make"
+                            app:layout_constraintTop_toBottomOf="@id/text_vehicle_color_label" />
+
+                        <TextView
+                            android:id="@+id/text_vehicle_number"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/vehicle_no"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/text_vehicle_number_label"
+                            app:layout_constraintStart_toEndOf="@+id/image_vehicle"
+                            app:layout_constraintTop_toBottomOf="@id/text_vehicle_make" />
+
+                        <TextView
+                            android:id="@+id/text_vehicle_number_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/vehicle_no_label"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_vehicle_number"
+                            app:layout_constraintTop_toBottomOf="@id/text_vehicle_make_label" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_party"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten"
+                    app:cardCornerRadius="@dimen/ten"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_vehicle">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/text_party_heading"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:padding="@dimen/ten"
+                            android:text="@string/party_details"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/image_party"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/ic_profile"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_party_heading" />
+
+                        <TextView
+                            android:id="@+id/text_party_name"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:text="@string/party_name"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_party_name_label"
+                            app:layout_constraintEnd_toStartOf="@id/text_party_name_label"
+                            app:layout_constraintStart_toEndOf="@id/image_party"
+                            app:layout_constraintTop_toTopOf="@+id/text_party_name_label" />
+
+                        <TextView
+                            android:id="@+id/text_party_name_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/party_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintEnd_toStartOf="@id/phone"
+                            app:layout_constraintStart_toEndOf="@id/text_party_name"
+                            app:layout_constraintTop_toBottomOf="@+id/text_party_heading" />
+
+                        <TextView
+                            android:id="@+id/text_party_address"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:text="@string/party_address"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_party_address_label"
+                            app:layout_constraintEnd_toStartOf="@id/text_party_address_label"
+                            app:layout_constraintStart_toEndOf="@id/image_party"
+                            app:layout_constraintTop_toTopOf="@+id/text_party_address_label" />
+
+                        <TextView
+                            android:id="@+id/text_party_address_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/party_address_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintEnd_toStartOf="@id/phone"
+                            app:layout_constraintStart_toEndOf="@id/text_party_address"
+                            app:layout_constraintTop_toBottomOf="@+id/text_party_occupation_label" />
+
+                        <TextView
+                            android:id="@+id/text_party_mobile"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:text="@string/mobile_no"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_party_mobile_label"
+                            app:layout_constraintEnd_toStartOf="@id/text_party_mobile_label"
+                            app:layout_constraintStart_toEndOf="@id/image_party"
+                            app:layout_constraintTop_toTopOf="@+id/text_party_mobile_label" />
+
+                        <TextView
+                            android:id="@+id/text_party_mobile_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/mobile_no_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintEnd_toStartOf="@id/phone"
+                            app:layout_constraintStart_toEndOf="@id/text_party_mobile"
+                            app:layout_constraintTop_toBottomOf="@+id/text_party_name_label" />
+
+                        <ImageView
+                            android:id="@+id/phone"
+                            android:layout_width="@dimen/thirty_five"
+                            android:layout_height="@dimen/thirty_five"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/ic_call"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_party_mobile_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/text_party_mobile_label" />
+
+                        <TextView
+                            android:id="@+id/text_party_occupation"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:text="@string/party_occupation"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_party_occupation_label"
+                            app:layout_constraintEnd_toStartOf="@id/text_party_occupation_label"
+                            app:layout_constraintStart_toEndOf="@id/image_party"
+                            app:layout_constraintTop_toTopOf="@+id/text_party_occupation_label" />
+
+                        <TextView
+                            android:id="@+id/text_party_occupation_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/occupation_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintEnd_toStartOf="@id/phone"
+                            app:layout_constraintStart_toEndOf="@id/text_party_occupation"
+                            app:layout_constraintTop_toBottomOf="@id/text_party_mobile_label"
+                            tools:layout_editor_absoluteY="120dp" />
+
+                        <TextView
+                            android:id="@+id/text_party_landmark"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/party_landmark"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/text_party_landmark_label"
+                            app:layout_constraintStart_toEndOf="@id/image_party"
+                            app:layout_constraintTop_toTopOf="@+id/text_party_landmark_label" />
+
+                        <TextView
+                            android:id="@+id/text_party_landmark_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/party_landmark_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/phone"
+                            app:layout_constraintStart_toEndOf="@id/text_party_landmark"
+                            app:layout_constraintTop_toBottomOf="@id/text_party_address_label" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_guarantee"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten"
+                    app:cardCornerRadius="@dimen/ten"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_party">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/image_guarantee"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/ic_profile"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_guarentee_heading" />
+
+                        <TextView
+                            android:id="@+id/text_guarentee_heading"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:padding="@dimen/ten"
+                            android:text="@string/guarantee_details"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/text_guarantee_name"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:text="@string/guarantor_name"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_guarantee_name_label"
+                            app:layout_constraintEnd_toStartOf="@id/text_guarantee_name_label"
+                            app:layout_constraintStart_toEndOf="@+id/image_guarantee"
+                            app:layout_constraintTop_toTopOf="@+id/text_guarantee_name_label" />
+
+                        <TextView
+                            android:id="@+id/text_guarantee_name_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/guarantor_name_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintEnd_toStartOf="@id/guarantee_phone"
+                            app:layout_constraintStart_toEndOf="@+id/text_guarantee_name"
+                            app:layout_constraintTop_toBottomOf="@+id/text_guarentee_heading" />
+
+                        <ImageView
+                            android:id="@+id/guarantee_phone"
+                            android:layout_width="@dimen/thirty_five"
+                            android:layout_height="@dimen/thirty_five"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/ic_call"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_guarantee_phone_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/text_guarantee_phone_label" />
+
+                        <TextView
+                            android:id="@+id/text_guarantee_phone"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:text="@string/mobile_no"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_guarantee_phone_label"
+                            app:layout_constraintEnd_toStartOf="@id/text_guarantee_phone_label"
+                            app:layout_constraintStart_toEndOf="@+id/image_guarantee"
+                            app:layout_constraintTop_toTopOf="@+id/text_guarantee_phone_label" />
+
+                        <TextView
+                            android:id="@+id/text_guarantee_phone_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/guarantor_name_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintEnd_toStartOf="@id/guarantee_phone"
+                            app:layout_constraintStart_toEndOf="@+id/text_guarantee_phone"
+                            app:layout_constraintTop_toBottomOf="@+id/text_guarantee_name_label" />
+
+                        <TextView
+                            android:id="@+id/text_guarantee_occupation"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:text="@string/party_occupation"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_guarantee_occupation_label"
+                            app:layout_constraintEnd_toStartOf="@id/text_guarantee_occupation_label"
+                            app:layout_constraintStart_toEndOf="@+id/image_guarantee"
+                            app:layout_constraintTop_toTopOf="@+id/text_guarantee_occupation_label" />
+
+                        <TextView
+                            android:id="@+id/text_guarantee_occupation_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/guarantor_occupation_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintEnd_toStartOf="@id/guarantee_phone"
+                            app:layout_constraintStart_toEndOf="@+id/text_guarantee_occupation"
+                            app:layout_constraintTop_toBottomOf="@+id/text_guarantee_phone_label" />
+
+                        <TextView
+                            android:id="@+id/text_guarantee_address"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:text="@string/party_address"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_guarantee_address_label"
+                            app:layout_constraintEnd_toStartOf="@id/text_guarantee_address_label"
+                            app:layout_constraintStart_toEndOf="@+id/image_guarantee"
+                            app:layout_constraintTop_toTopOf="@+id/text_guarantee_address_label" />
+
+                        <TextView
+                            android:id="@+id/text_guarantee_address_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/party_address_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintEnd_toStartOf="@id/guarantee_phone"
+                            app:layout_constraintStart_toEndOf="@+id/text_guarantee_address"
+                            app:layout_constraintTop_toBottomOf="@+id/text_guarantee_occupation_label" />
+
+                        <TextView
+                            android:id="@+id/text_guarantee_landmark"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/party_landmark"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_guarantee_landmark_label"
+                            app:layout_constraintEnd_toStartOf="@id/text_guarantee_landmark_label"
+                            app:layout_constraintStart_toEndOf="@+id/image_guarantee"
+                            app:layout_constraintTop_toTopOf="@+id/text_guarantee_landmark_label" />
+
+                        <TextView
+                            android:id="@+id/text_guarantee_landmark_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/party_address_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/guarantee_phone"
+                            app:layout_constraintStart_toEndOf="@+id/text_guarantee_landmark"
+                            app:layout_constraintTop_toBottomOf="@+id/text_guarantee_address_label" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progress_hpdetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

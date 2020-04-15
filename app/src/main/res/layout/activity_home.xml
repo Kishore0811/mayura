@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/home"
+            app:titleTextColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/address_textView"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:padding="@dimen/twenty"
+            android:text="@string/address"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/eighteen_sp"
+            app:layout_constraintBottom_toTopOf="@id/scrollView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero"
+            android:background="@color/lightPink"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address_textView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/ten">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pending_list_cardView"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/five"
+                    app:cardCornerRadius="@dimen/five"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintBottom_toTopOf="@id/collection_cardView"
+                    app:layout_constraintEnd_toStartOf="@+id/emiCalc_cardView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ten">
+
+                        <ImageView
+                            android:id="@+id/pending_list_imageView"
+                            android:layout_width="@dimen/seventy_five"
+                            android:layout_height="@dimen/seventy_five"
+                            android:contentDescription="@string/todo"
+                            android:padding="@dimen/five"
+                            android:src="@drawable/ic_pendinglist"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/pending_list_textView"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/ten"
+                            android:paddingBottom="@dimen/ten"
+                            android:text="@string/pending_list"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/pending_list_imageView" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/collection_cardView"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/five"
+                    app:cardCornerRadius="@dimen/five"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/support_cardView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pending_list_cardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ten">
+
+                        <ImageView
+                            android:id="@+id/collection_imageView"
+                            android:layout_width="@dimen/seventy_five"
+                            android:layout_height="@dimen/seventy_five"
+                            android:contentDescription="@string/todo"
+                            android:padding="@dimen/five"
+                            android:src="@drawable/ic_money"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/collection_textView"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/ten"
+                            android:paddingBottom="@dimen/ten"
+                            android:text="@string/collection"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/collection_imageView" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/emiCalc_cardView"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/five"
+                    app:cardCornerRadius="@dimen/five"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintBottom_toTopOf="@+id/support_cardView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pending_list_cardView"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/ten">
+
+                        <ImageView
+                            android:id="@+id/emiCalc_imageView"
+                            android:layout_width="@dimen/seventy_five"
+                            android:layout_height="@dimen/seventy_five"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/todo"
+                            android:padding="@dimen/five"
+                            android:src="@drawable/ic_emicalculator"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/emiCalc_textView"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/ten"
+                            android:paddingBottom="@dimen/ten"
+                            android:text="@string/emicalc"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/emiCalc_imageView" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/support_cardView"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/five"
+                    app:cardCornerRadius="@dimen/five"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/collection_cardView"
+                    app:layout_constraintTop_toBottomOf="@+id/emiCalc_cardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/ten">
+
+                        <ImageView
+                            android:id="@+id/support_imageView"
+                            android:layout_width="@dimen/seventy_five"
+                            android:layout_height="@dimen/seventy_five"
+                            android:contentDescription="@string/todo"
+                            android:padding="@dimen/five"
+                            android:src="@drawable/ic_support"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/support_textView"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/ten"
+                            android:paddingBottom="@dimen/ten"
+                            android:text="@string/support"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/support_imageView" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

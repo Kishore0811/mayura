@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.primemover.mayura">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeNoActionBar"
+        android:configChanges="uiMode"
+        android:usesCleartextTraffic="true"
+        android:icon="@mipmap/ic_logo">
+<!--        <activity android:name=".TempActivity">-->
+
+<!--        </activity>-->
+        <activity
+            android:name=".hpdetails.HpDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".support.SupportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".emiCalculator.EmiCalculatorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".collection.CollectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pending.PendingListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".splashscreen.SplashScreenActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+    </application>
+
+</manifest>

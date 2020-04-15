@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:theme="@style/ToolbarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/collectionlist"
+            app:titleTextColor="@color/colorWhite" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/hp_details_cardview"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten"
+                    app:cardCornerRadius="@dimen/ten"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintBottom_toTopOf="@id/receipt_details_cardview"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/hp_details_textView"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:padding="@dimen/ten"
+                            android:text="@string/hp_details"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/new_hp"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/new_hp"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_old_hp"
+                            app:layout_constraintEnd_toStartOf="@id/new_hp_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/hp_details_textView" />
+
+                        <TextView
+                            android:id="@+id/new_hp_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/new_hp_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_old_hp_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/new_hp"
+                            app:layout_constraintTop_toBottomOf="@+id/hp_details_textView" />
+
+                        <TextView
+                            android:id="@+id/text_old_hp_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/old_hp_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/total_hp_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/text_old_hp"
+                            app:layout_constraintTop_toBottomOf="@+id/new_hp_label" />
+
+                        <TextView
+                            android:id="@+id/total_hp_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/total_hp_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/total_amount_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/total_hp"
+                            app:layout_constraintTop_toBottomOf="@+id/text_old_hp_label" />
+
+                        <TextView
+                            android:id="@+id/text_finance_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/finance_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/text_finance"
+                            app:layout_constraintTop_toBottomOf="@+id/total_amount_label" />
+
+                        <TextView
+                            android:id="@+id/total_amount_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/total_amount_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_finance_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/text_total_amount"
+                            app:layout_constraintTop_toBottomOf="@+id/total_hp_label" />
+
+                        <TextView
+                            android:id="@+id/text_old_hp"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/old_hp"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/total_hp"
+                            app:layout_constraintEnd_toStartOf="@id/text_old_hp_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/new_hp" />
+
+                        <TextView
+                            android:id="@+id/total_hp"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/total_hp"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_total_amount"
+                            app:layout_constraintEnd_toStartOf="@id/total_hp_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_old_hp" />
+
+                        <TextView
+                            android:id="@+id/text_total_amount"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/total_amount"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_finance"
+                            app:layout_constraintEnd_toStartOf="@id/total_amount_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/total_hp" />
+
+                        <TextView
+                            android:id="@+id/text_finance"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/finance"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/text_finance_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_total_amount" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/receipt_details_cardview"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/ten"
+                    android:layout_marginEnd="@dimen/ten"
+                    app:cardCornerRadius="@dimen/ten"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintBottom_toTopOf="@id/card_precloser"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hp_details_cardview">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/receipt_details_textView"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:padding="@dimen/ten"
+                            android:text="@string/receipt_details"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/text_principal"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/principal"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_interest"
+                            app:layout_constraintEnd_toStartOf="@id/text_principal_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/receipt_details_textView" />
+
+                        <TextView
+                            android:id="@+id/text_principal_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/principal_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_interest_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/text_principal"
+                            app:layout_constraintTop_toBottomOf="@+id/receipt_details_textView" />
+
+                        <TextView
+                            android:id="@+id/text_interest"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/interest_heading"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_penalty_receipt"
+                            app:layout_constraintEnd_toStartOf="@id/text_interest_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_principal" />
+
+                        <TextView
+                            android:id="@+id/text_interest_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/interest_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_penalty_receipt_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/text_interest"
+                            app:layout_constraintTop_toBottomOf="@+id/text_principal_label" />
+
+                        <TextView
+                            android:id="@+id/text_penalty_receipt"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/penalty"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_account"
+                            app:layout_constraintEnd_toStartOf="@id/text_penalty_receipt_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_interest" />
+
+                        <TextView
+                            android:id="@+id/text_penalty_receipt_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/penalty_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_account_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/text_penalty_receipt"
+                            app:layout_constraintTop_toBottomOf="@+id/text_interest_label" />
+
+                        <TextView
+                            android:id="@+id/text_account"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/account"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_total_receipt"
+                            app:layout_constraintEnd_toStartOf="@id/text_account_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_penalty_receipt" />
+
+                        <TextView
+                            android:id="@+id/text_account_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/account_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@+id/text_total_receipt_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/text_account"
+                            app:layout_constraintTop_toBottomOf="@+id/text_penalty_receipt_label" />
+
+                        <TextView
+                            android:id="@+id/text_total_receipt"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/total"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/text_total_receipt_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_account" />
+
+                        <TextView
+                            android:id="@+id/text_total_receipt_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/total_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/text_total_receipt"
+                            app:layout_constraintTop_toBottomOf="@+id/text_account_label" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_precloser"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten"
+                    app:cardCornerRadius="@dimen/ten"
+                    app:cardElevation="@dimen/five"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/receipt_details_cardview">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/text_precloser"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:padding="@dimen/ten"
+                            android:text="@string/precloser_details"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/text_penalty"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/penalty"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_discount"
+                            app:layout_constraintEnd_toStartOf="@id/text_penalty_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_precloser" />
+
+                        <TextView
+                            android:id="@+id/text_penalty_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/penalty_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_discount_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/text_penalty"
+                            app:layout_constraintTop_toBottomOf="@+id/text_precloser" />
+
+                        <TextView
+                            android:id="@+id/text_discount"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/discount"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_paid_amount"
+                            app:layout_constraintEnd_toStartOf="@id/text_discount_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_penalty" />
+
+                        <TextView
+                            android:id="@+id/text_discount_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:text="@string/discount_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toTopOf="@id/text_paid_amount_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@id/text_discount"
+                            app:layout_constraintTop_toBottomOf="@id/text_penalty_label" />
+
+                        <TextView
+                            android:id="@+id/text_paid_amount"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/paid_amount"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/text_paid_amount_label"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_discount" />
+
+                        <TextView
+                            android:id="@+id/text_paid_amount_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/paid_amount_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@id/text_paid_amount"
+                            app:layout_constraintTop_toBottomOf="@id/text_discount_label" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/collection_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

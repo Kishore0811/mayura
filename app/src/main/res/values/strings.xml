@@ -1,0 +1,165 @@
+<resources>
+    <string name="app_name">Mayura</string>
+    <string name="splash_screen">MAYURA FINANCE</string>
+    <string name="todo">TODO</string>
+
+    <!-- Toolbar-->
+
+    <string name="home">Mayura Finance</string>
+    <string name="pendinglist">Pending List</string>
+    <string name="collectionlist">Collection</string>
+    <string name="hpdetails">Hp Details</string>
+
+    <!--    logout_dialog-->
+
+    <string name="logout">Log out</string>
+    <string name="are_you_sure_want_to_logout">Are you sure want to Logout?</string>
+    <string name="cancel">Cancel</string>
+    <string name="okay">OK</string>
+
+    <!--    activity_login-->
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+
+    <!--    LoginActivity-->
+
+    <string name="username_error">Username required</string>
+    <string name="password_error">Password required</string>
+    <string name="connection_out">Connection Timed out</string>
+    <string name="internet_off">You are Offline</string>
+    <string name="empty_fields">Fields cannot be empty</string>
+    <string name="wrong_credentials">Wrong credentials</string>
+    <string name="logged_in">Logged in</string>
+    <string name="incorrect">Incorrect Username/Password</string>
+
+    <!--    activity_home-->
+
+    <string name="pending_list">Pending List</string>
+    <string name="emicalc">EMI Calculator</string>
+    <string name="support">Support</string>
+    <string name="collection">Collection</string>
+    <string name="address">address</string>
+    <string name="toast_logout">Logged Out</string>
+
+    <!--    PendingListActivity-->
+
+    <string name="from_error">From Required</string>
+    <string name="to_error">To Required</string>
+    <string name="from_to_error">From should be less than or equal to To</string>
+
+    <!--    all_pendinglist_item-->
+
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="name">Name</string>
+    <string name="name_label">name_label</string>
+    <string name="mobile_no">Mobile</string>
+    <string name="mobile_no_label">mobile_label</string>
+    <string name="emi">EMI:</string>
+    <string name="emi_label">emi_label</string>
+    <string name="amount">Amount:</string>
+    <string name="amount_label">amount_label</string>
+    <string name="vehicle_no">Vehicle No</string>
+    <string name="vehicle_no_label">label</string>
+    <string name="pending_due">Pending Due:</string>
+    <string name="pending_due_label">pd_label</string>
+    <string name="hp_no">Hp No:</string>
+    <string name="hp_no_label">hp_no_label</string>
+    <string name="submit">Submit</string>
+    <string name="label">0</string>
+    <string name="count">Pending Count</string>
+
+    <!--    activity_collection-->
+
+    <string name="empty_data">Empty Data</string>
+    <string name="hp_details">HP Details</string>
+    <string name="new_hp">New HP</string>
+    <string name="new_hp_label">new_hp_label</string>
+    <string name="old_hp">Old HP</string>
+    <string name="old_hp_label">old_hp_label</string>
+    <string name="total_hp">Total</string>
+    <string name="total_hp_label">total_label</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="total_amount_label">total_amount_label</string>
+    <string name="finance">Finance</string>
+    <string name="finance_label">finance_label</string>
+    <string name="receipt_details">Receipt Details</string>
+    <string name="online_label">online_label</string>
+    <string name="cheque">Cheque</string>
+    <string name="cheque_label">cheque_label</string>
+    <string name="collection_amount">Collection Amount</string>
+    <string name="collection_amount_label">collection_label</string>
+    <string name="precloser_details">Precloser Details</string>
+    <string name="penalty">Penalty</string>
+    <string name="penalty_label">penalty_label</string>
+    <string name="discount">Discount</string>
+    <string name="discount_label">discount_label</string>
+    <string name="paid_amount">Paid Amount</string>
+    <string name="paid_amount_label">paid_amount_label</string>
+    <string name="account">Account</string>
+    <string name="account_label">account_label</string>
+
+    <!--    activity_emi_calculator-->
+
+    <string name="calculate">Calculate</string>
+    <string name="emiCalculator">EMI Calculator</string>
+    <string name="loanAmount">Loan Amount</string>
+    <string name="duration">Duration</string>
+    <string name="interest">Interest Rate</string>
+    <string name="principal">Principal</string>
+    <string name="principal_label">princi_label</string>
+    <string name="interest_heading">Interest</string>
+    <string name="interest_label">interest_lab</string>
+    <string name="total">Total</string>
+    <string name="total_label">total_label</string>
+
+    <!--    EmiCalculatorActivity-->
+
+    <string name="loan_error">Loan amount required</string>
+    <string name="duration_error">Duration required</string>
+    <string name="interest_error">Interest required</string>
+
+    <!--    activity_support-->
+
+    <string name="support_webview">Website: http://primemoversolutions.in</string>
+    <string name="phone_number">Phone: +91 9842703312</string>
+    <string name="version">Version: 1.2.0</string>
+
+    <!--    activity_hpdetails-->
+
+    <string name="status">Status</string>
+    <string name="status_label">label</string>
+    <string name="no_of_month">No Of Month</string>
+    <string name="no_of_month_label">label</string>
+    <string name="start_date">Start Date</string>
+    <string name="start_date_label">label</string>
+    <string name="emi_hpdetails">EMI</string>
+    <string name="vehicle_details">Vehicle Details</string>
+    <string name="vehicle_name">Name</string>
+    <string name="vehicle_name_label">label</string>
+    <string name="vehicle_color_label">label</string>
+    <string name="vehicle_color">Color</string>
+    <string name="vehicle_make">Make</string>
+    <string name="party_details">Party Details</string>
+    <string name="party_name">Name</string>
+    <string name="party_label">party_label</string>
+    <string name="party_address">Address</string>
+    <string name="party_address_label">address_label</string>
+    <string name="party_occupation">Occupation</string>
+    <string name="occupation_label">occup_label</string>
+    <string name="party_landmark">Landmark</string>
+    <string name="party_landmark_label">landmark_label</string>
+    <string name="logging_in">Logging In</string>
+    <string name="error">Error Response</string>
+    <string name="error_number">Couldn\'t find number</string>
+    <string name="guarantee_details">Guarantee Details</string>
+    <string name="guarantor_name">Name</string>
+    <string name="guarantor_name_label">label</string>
+    <string name="guarantor_occupation_label">label</string>
+    <string name="data_not_found">Data Not Found</string>
+    <string name="hp_amount">Amount</string>
+    <string name="hp_pending_due">Pending Due</string>
+
+</resources>
