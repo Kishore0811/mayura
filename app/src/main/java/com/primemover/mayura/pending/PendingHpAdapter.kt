@@ -10,21 +10,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.primemover.mayura.R
 import com.primemover.mayura.constants.Utils.imageView
 import com.primemover.mayura.constants.Utils.toastMessage
+import com.primemover.mayura.databinding.AllPendinglistItemBinding
 import com.primemover.mayura.hpdetails.HpDetailsActivity
-import kotlinx.android.synthetic.main.activity_pendinglist.view.*
 
 class PendingHpAdapter(private val context: Context, private var pending: ArrayList<PendingHpResponse>) :
         RecyclerView.Adapter<PendingHpAdapter.PendingHpViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingHpViewHolder {
+    lateinit var allPendinglistItemBinding: AllPendinglistItemBinding
 
-        return PendingHpViewHolder(
-                LayoutInflater.from(parent.context)
-                        .inflate(R.layout.activity_pendinglist, parent, false), context, pending)
+    override fun onCreateViewHolder(parent: ViewGroup, position: Int): PendingHpViewHolder {
+
+        allPendinglistItemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+                R.layout.all_pendinglist_item, parent, false)
+
+
+        return PendingHpViewHolder(allPendinglistItemBinding, context, pending)
 
     }
 
@@ -33,26 +38,24 @@ class PendingHpAdapter(private val context: Context, private var pending: ArrayL
 
     override fun onBindViewHolder(holder: PendingHpViewHolder, position: Int) {
 
-        val pendinglist = pending[position]
-
-        holder.view.hp_no_label.text = pendinglist.hp_no
-        holder.view.name_label.text = pendinglist.name
-        holder.view.mobile_no_label.text = pendinglist.mobile_no
-        holder.view.emi_label.text = pendinglist.emi.toString()
-        holder.view.amount_label.text = pendinglist.amount
-        holder.view.vehicle_no_label.text = pendinglist.vehicle_no
-        holder.view.pending_due_label.text = pendinglist.pending_dues
-        imageView(context, holder.view.customer_imageView, pendinglist.image)
+        holder.binding.hpNoLabel.text = pending[position].hp_no
+        holder.binding.amountLabel.text = pending[position].amount
+        holder.binding.pendingDueLabel.text = pending[position].pending_dues
+        holder.binding.emiLabel.text = pending[position].emi.toString()
+        holder.binding.nameLabel.text = pending[position].name
+        holder.binding.mobileNoLabel.text = pending[position].mobile_no
+        holder.binding.vehicleNoLabel.text = pending[position].vehicle_no
+        imageView(context, holder.binding.customerImageView, pending[position].image)
     }
 
-    class PendingHpViewHolder(val view: View,
+    class PendingHpViewHolder(val binding: AllPendinglistItemBinding,
                               private val context: Context,
                               private val pending: ArrayList<PendingHpResponse>)
-        : RecyclerView.ViewHolder(view), View.OnClickListener {
+        : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
         init {
-            view.phone.setOnClickListener(this)
-            view.customer_info_cardView.setOnClickListener(this)
+            binding.phone.setOnClickListener(this)
+            binding.customerInfoCardView.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {
@@ -62,12 +65,9 @@ class PendingHpAdapter(private val context: Context, private var pending: ArrayL
                 R.id.phone -> {
                     dial(dialPhone.mobile_no)
                 }
-
                 R.id.customer_info_cardView -> {
-
+                    //Toast.makeText(context, "Card clicked", Toast.LENGTH_SHORT).show()
                     val intent = Intent(context, HpDetailsActivity::class.java)
-
-                    //Sending value to HpDetails Activity
                     intent.putExtra("hpId", (pending[adapterPosition].hp_id))
                     context.startActivity(intent)
                 }

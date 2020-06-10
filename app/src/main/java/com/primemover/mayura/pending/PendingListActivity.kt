@@ -14,8 +14,8 @@ import com.primemover.mayura.R
 import com.primemover.mayura.api.APIClient
 import com.primemover.mayura.constants.Utils.hideSoftKeyBoard
 import com.primemover.mayura.constants.Utils.toastMessage
-import com.primemover.mayura.databinding.ActivityRecyclerviewPendinglistBinding
-import kotlinx.android.synthetic.main.activity_recyclerview_pendinglist.*
+import com.primemover.mayura.databinding.ActivityPendinglistBinding
+import kotlinx.android.synthetic.main.activity_pendinglist.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,12 +23,12 @@ import java.net.SocketTimeoutException
 
 class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatcher {
 
-    lateinit var binding: ActivityRecyclerviewPendinglistBinding
+    lateinit var binding: ActivityPendinglistBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_recyclerview_pendinglist)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_pendinglist)
 
         binding.from.addTextChangedListener(this)
         binding.to.addTextChangedListener(this)

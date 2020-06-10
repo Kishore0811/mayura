@@ -11,7 +11,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
-            android:theme="@style/ToolbarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -23,9 +22,8 @@
             android:layout_width="@dimen/zero"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/twenty"
-            app:cardCornerRadius="@dimen/ten"
+            app:cardCornerRadius="@dimen/five"
             app:cardElevation="@dimen/five"
-            app:layout_constraintBottom_toTopOf="@id/totalCard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -116,118 +114,110 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/twenty"
             android:visibility="gone"
-            app:cardCornerRadius="@dimen/ten"
             app:cardElevation="@dimen/five"
+            app:cardCornerRadius="@dimen/five"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emiCard">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/ten">
+                android:layout_height="match_parent"
+                android:padding="@dimen/fifteen_dp">
 
                 <TextView
                     android:id="@+id/principal"
-                    android:layout_width="@dimen/zero"
+                    android:layout_width="@dimen/one_hundred_twenty"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/ten"
+                    android:layout_marginStart="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/thirty_two"
                     android:text="@string/principal"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/twenty_sp"
-                    app:layout_constraintBottom_toTopOf="@id/interest"
-                    app:layout_constraintEnd_toStartOf="@id/principal_label"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/principal_label"
-                    android:layout_width="@dimen/zero"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/ten"
+                    android:layout_marginTop="@dimen/thirty_two"
                     android:text="@string/principal_label"
                     android:textSize="@dimen/twenty_sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@id/interest_label"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/principal"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/interest"
-                    android:layout_width="@dimen/zero"
+                    android:layout_width="@dimen/one_hundred_twenty"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/twenty"
+                    android:layout_marginStart="@dimen/sixteen"
+                    android:layout_marginTop="@dimen/thirty_six"
                     android:text="@string/interest_heading"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/twenty_sp"
-                    app:layout_constraintBottom_toTopOf="@id/total"
-                    app:layout_constraintEnd_toStartOf="@id/interest_label"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/principal" />
 
                 <TextView
                     android:id="@+id/interest_label"
-                    android:layout_width="@dimen/zero"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/twenty"
+                    android:layout_marginTop="@dimen/thirty_six"
                     android:text="@string/interest_label"
                     android:textSize="@dimen/twenty_sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@id/total_label"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/interest"
                     app:layout_constraintTop_toBottomOf="@+id/principal_label" />
 
                 <TextView
                     android:id="@+id/total"
-                    android:layout_width="@dimen/zero"
+                    android:layout_width="@dimen/one_hundred_twenty"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/twenty"
-                    android:layout_marginBottom="@dimen/twenty"
+                    android:layout_marginStart="@dimen/sixteen"
+                    android:layout_marginTop="@dimen/thirty_six"
                     android:text="@string/total"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/twenty_sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/total_label"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/interest" />
 
                 <View
                     android:id="@+id/divider_total_up"
-                    android:layout_width="@dimen/one_hundred_twenty"
+                    android:layout_width="@dimen/hundred"
                     android:layout_height="@dimen/one"
-                    android:layout_marginStart="@dimen/eighty"
+                    android:layout_marginBottom="@dimen/sixteen"
                     android:background="@color/colorAccent"
                     app:layout_constraintBottom_toTopOf="@+id/total_label"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/interest_label" />
+                    app:layout_constraintHorizontal_bias="0.553"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/total_label"
-                    android:layout_width="@dimen/zero"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/twenty"
-                    android:layout_marginBottom="@dimen/twenty"
+                    android:layout_marginTop="@dimen/thirty_six"
                     android:text="@string/total_label"
                     android:textSize="@dimen/twenty_sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/total"
                     app:layout_constraintTop_toBottomOf="@+id/interest_label" />
 
                 <View
                     android:id="@+id/divider_total_down"
-                    android:layout_width="@dimen/one_hundred_twenty"
+                    android:layout_width="@dimen/hundred"
                     android:layout_height="@dimen/one"
                     android:layout_marginTop="@dimen/sixteen"
                     android:background="@color/colorAccent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/divider_total_up"
-                    app:layout_constraintStart_toStartOf="@+id/divider_total_up"
-                    app:layout_constraintTop_toBottomOf="@+id/total_label" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.553"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/total_label"
+                    app:layout_constraintVertical_bias="0.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

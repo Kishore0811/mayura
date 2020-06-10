@@ -19,7 +19,7 @@
 
         <TextView
             android:id="@+id/address_textView"
-            android:layout_width="@dimen/zero"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
             android:padding="@dimen/twenty"
@@ -28,8 +28,6 @@
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/eighteen_sp"
             app:layout_constraintBottom_toTopOf="@id/scrollView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
         <ScrollView
@@ -45,8 +43,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="@dimen/ten">
+                android:layout_gravity="center">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/pending_list_cardView"
@@ -191,7 +188,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/five"
                     app:cardCornerRadius="@dimen/five"
-                    app:cardElevation="@dimen/five"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/collection_cardView"
