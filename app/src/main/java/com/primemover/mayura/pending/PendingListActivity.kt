@@ -32,9 +32,7 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
 
         binding.from.addTextChangedListener(this)
         binding.to.addTextChangedListener(this)
-        binding.to.setOnClickListener(this)
         binding.submit.setOnClickListener(this)
-        //applyTheme("dark")
         setSupportActionBar(binding.toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
@@ -62,7 +60,6 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
 
                                 override fun onFailure(call: Call<ArrayList<PendingHpResponse>>,
                                                        t: Throwable) {
-                                    pending_list_progressBar.visibility = View.GONE
 
                                     Log.i("Pending failure", t.toString())
 

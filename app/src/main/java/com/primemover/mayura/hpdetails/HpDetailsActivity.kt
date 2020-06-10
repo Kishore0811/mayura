@@ -140,7 +140,7 @@ class HpDetailsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-    private fun dial(number: String) {
+    fun dial(number: String) {
         when {
             number == "" -> {
                 toastMessage(this, R.string.error_number)

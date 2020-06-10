@@ -23,15 +23,13 @@ class EmiCalculatorActivityTest {
     @Test
     fun `Interest should return correct value`() {
         val actualInterest = emiCalculator.calculateInterest("2000", "100")
-        val expectedInterest = 2000.toFloat()
-        assertEquals(expectedInterest, actualInterest)
+        assertEquals(2000.toFloat(), actualInterest)
     }
 
     @Test
     fun `Interest should return wrong value`() {
         val actualInterest = emiCalculator.calculateInterest("2000", "100")
-        val expectedInterest = 200.toFloat()
-        assertNotEquals(expectedInterest, actualInterest)
+        assertNotEquals(200.toFloat(), actualInterest)
     }
 
     @Test

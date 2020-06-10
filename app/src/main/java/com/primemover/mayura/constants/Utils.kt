@@ -16,8 +16,7 @@ object Utils {
         try {
             val keyboard = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             keyboard.hideSoftInputFromWindow(view.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
-        }
-        catch (e: Exception) {
+        } catch (e: Exception) {
             // TODO: handle exception
             e.printStackTrace()
         }
@@ -39,10 +38,12 @@ object Utils {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
+    const val TAG = "Mayura :"
+
     private const val lightMode = "light"
     private const val darkMode = "dark"
     private const val batterySaverMode = "battery"
-    const val default = "default"
+    private const val default = "default"
 
     fun applyTheme(theme: String) {
         when (theme) {

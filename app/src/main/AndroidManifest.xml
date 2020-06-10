@@ -27,9 +27,8 @@
         <activity
             android:name=".emiCalculator.EmiCalculatorActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".collection.CollectionActivity"
-            android:screenOrientation="portrait" />
+        <activity android:name=".collection.CollectionActivity" />
+        <!--            android:screenOrientation="portrait" />-->
         <activity
             android:name=".pending.PendingListActivity"
             android:screenOrientation="portrait" />
