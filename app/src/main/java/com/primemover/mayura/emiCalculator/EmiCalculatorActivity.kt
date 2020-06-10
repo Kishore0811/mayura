@@ -5,14 +5,13 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.primemover.mayura.R
 import com.primemover.mayura.constants.Utils.hideSoftKeyBoard
+import com.primemover.mayura.constants.Utils.toastMessage
 import com.primemover.mayura.databinding.ActivityEmiCalculatorBinding
 import kotlinx.android.synthetic.main.activity_emi_calculator.*
-import java.lang.NumberFormatException
 import kotlin.math.round
 
 class EmiCalculatorActivity : AppCompatActivity(), View.OnClickListener, TextWatcher {
@@ -57,9 +56,10 @@ class EmiCalculatorActivity : AppCompatActivity(), View.OnClickListener, TextWat
                     binding.totalLabel.text = round(total).toString()
 
 
-                }catch (e:NumberFormatException){
+                } catch (e: NumberFormatException) {
                     totalCard.visibility = View.GONE
-                    Toast.makeText(this,"Fields cannot be empty", Toast.LENGTH_SHORT).show()
+
+                    toastMessage(this, R.string.empty_fields)
 
                 }
             }
@@ -84,7 +84,7 @@ class EmiCalculatorActivity : AppCompatActivity(), View.OnClickListener, TextWat
 
             binding.loanAmount.text.hashCode() -> {
                 if (binding.loanAmount.text.isNullOrEmpty()) {
-                    binding.loanAmount.error = "Loan amount required"
+                    binding.loanAmount.error = getString(R.string.loan_error)
                     return
 
                 } else {
@@ -93,7 +93,7 @@ class EmiCalculatorActivity : AppCompatActivity(), View.OnClickListener, TextWat
             }
             binding.duration.text.hashCode() -> {
                 if (binding.duration.text.isNullOrEmpty()) {
-                    binding.duration.error = "Duration required"
+                    binding.duration.error = getString(R.string.duration_error)
                     return
 
                 } else {
@@ -103,7 +103,7 @@ class EmiCalculatorActivity : AppCompatActivity(), View.OnClickListener, TextWat
             }
             binding.interestRate.text.hashCode() -> {
                 if (binding.interestRate.text.isNullOrEmpty()) {
-                    binding.interestRate.error = "Interest required"
+                    binding.interestRate.error = getString(R.string.interest_error)
                     return
 
                 } else {

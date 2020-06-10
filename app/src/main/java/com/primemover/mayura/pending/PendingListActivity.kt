@@ -3,9 +3,9 @@ package com.primemover.mayura.pending
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,8 +13,9 @@ import com.google.android.material.snackbar.Snackbar
 import com.primemover.mayura.R
 import com.primemover.mayura.api.APIClient
 import com.primemover.mayura.constants.Utils.hideSoftKeyBoard
-import com.primemover.mayura.databinding.ActivityRecyclerviewPendinglistBinding
-import kotlinx.android.synthetic.main.activity_recyclerview_pendinglist.*
+import com.primemover.mayura.constants.Utils.toastMessage
+import com.primemover.mayura.databinding.ActivityPendinglistBinding
+import kotlinx.android.synthetic.main.activity_pendinglist.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,12 +23,12 @@ import java.net.SocketTimeoutException
 
 class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatcher {
 
-    lateinit var binding: ActivityRecyclerviewPendinglistBinding
+    lateinit var binding: ActivityPendinglistBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_recyclerview_pendinglist)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_pendinglist)
 
         binding.from.addTextChangedListener(this)
         binding.to.addTextChangedListener(this)
@@ -49,29 +50,27 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
                 //To hide the keyboard
                 hideSoftKeyBoard(this, v)
 
-
-
                 if (to < from) {
 
-                    Toast.makeText(this, getString(R.string.from_to_error),
-                            Toast.LENGTH_LONG).show()
+                    toastMessage(this, R.string.from_to_error)
                 } else {
 
                     progressBar.visibility = View.VISIBLE
 
                     APIClient.instance.pendinghp(from, to)
-                            .enqueue(object : Callback<ArrayList<PendingHpResponse>> {
+                            .enqueue(object : Callback<PendingHpResponse> {
 
-                                override fun onFailure(call: Call<ArrayList<PendingHpResponse>>,
+                                override fun onFailure(call: Call<PendingHpResponse>,
                                                        t: Throwable) {
+
                                     progressBar.visibility = View.GONE
+
+                                    Log.i("Kishore", t.message.toString())
 
                                     //Timeout Exception
                                     if (t is SocketTimeoutException) {
 
-                                        Toast.makeText(this@PendingListActivity,
-                                                getString(R.string.connection_out), Toast.LENGTH_SHORT)
-                                                .show()
+                                        toastMessage(this@PendingListActivity, R.string.connection_out)
 
 
                                     } else {
@@ -80,15 +79,18 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
                                     }
                                 }
 
-                                override fun onResponse(call: Call<ArrayList<PendingHpResponse>>,
-                                                        response: Response<ArrayList<PendingHpResponse>>) {
+                                override fun onResponse(call: Call<PendingHpResponse>,
+                                                        response: Response<PendingHpResponse>) {
 
                                     progressBar.visibility = View.GONE
+                                    binding.count.visibility = View.VISIBLE
+                                    binding.countLabel.visibility = View.VISIBLE
                                     recyclerViewPending.visibility = View.VISIBLE
                                     //Log.i("Response Pending:", response.body().toString())
 
                                     //Storing the response
                                     val pendinglist = response.body()
+                                    binding.count.text = pendinglist?.hppending_count.toString()
 
                                     // Showing it in recyclerView
                                     pendinglist?.let {
@@ -104,7 +106,7 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
         }
     }
 
-    private fun showPendingList(pendingList: ArrayList<PendingHpResponse>) {
+    private fun showPendingList(pendingList: PendingHpResponse) {
         val pendingAdapter = PendingHpAdapter(this, pendingList)
         recyclerViewPending.layoutManager = LinearLayoutManager(this)
         recyclerViewPending.adapter = pendingAdapter
@@ -127,8 +129,7 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
                 if (binding.from.text.isNullOrEmpty()) {
                     binding.from.error = getString(R.string.from_error)
                     return
-                }
-                else {
+                } else {
                     binding.from.error = null
                 }
             }
@@ -136,8 +137,7 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
                 if (binding.to.text.isNullOrEmpty()) {
                     binding.to.error = getString(R.string.to_error)
                     return
-                }
-                else {
+                } else {
                     binding.to.error = null
                 }
             }

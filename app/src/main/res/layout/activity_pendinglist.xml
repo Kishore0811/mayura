@@ -2,222 +2,145 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/customer_info_cardView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/five"
-            android:layout_marginRight="@dimen/five"
-            android:layout_marginBottom="@dimen/eight"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/pendinglist"
+            app:titleTextColor="@color/colorWhite">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/from_to_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/ten"
+            android:elevation="@dimen/five"
             app:cardCornerRadius="@dimen/ten"
-            app:cardElevation="@dimen/eight"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.02">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:padding="@dimen/ten">
 
-                <View
-                    android:id="@+id/view"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/zero"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintBottom_toTopOf="@+id/name"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/hp_no_label"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/from_text_input_Layout"
                     android:layout_width="@dimen/zero"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/sixteen"
-                    android:layout_marginTop="@dimen/eight"
-                    android:elevation="@dimen/ten"
-                    android:text="@string/hp_no_label"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/seventeen_sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/amount"
-                    android:layout_width="@dimen/zero"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/sixteen"
-                    android:layout_marginTop="@dimen/thirteen"
-                    android:layout_marginBottom="@dimen/twenty_four"
-                    android:elevation="@dimen/ten"
-                    android:paddingStart="@dimen/five"
-                    android:paddingEnd="@dimen/five"
-                    android:text="@string/amount"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/customer_imageView"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/hp_no_label" />
-
-                <TextView
-                    android:id="@+id/amount_label"
-                    android:layout_width="@dimen/zero"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/thirteen"
-                    android:elevation="@dimen/ten"
-                    android:text="@string/amount_label"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintStart_toEndOf="@+id/amount"
-                    app:layout_constraintTop_toBottomOf="@+id/hp_no_label" />
-
-                <TextView
-                    android:id="@+id/pending_due"
-                    android:layout_width="@dimen/zero"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/eighty"
-                    android:layout_marginTop="@dimen/eight"
-                    android:paddingStart="@dimen/five"
-                    android:paddingEnd="@dimen/five"
-                    android:text="@string/pending_due"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintStart_toEndOf="@+id/hp_no_label"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/pending_due_label"
-                    android:layout_width="@dimen/zero"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/eight"
-                    android:text="@string/pending_due_label"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintStart_toEndOf="@+id/pending_due"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/emi"
-                    android:layout_width="@dimen/zero"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/one"
-                    android:layout_marginTop="@dimen/thirty_two"
-                    android:elevation="@dimen/ten"
-                    android:paddingStart="@dimen/five"
-                    android:paddingEnd="@dimen/five"
-                    android:text="@string/emi"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintStart_toStartOf="@+id/pending_due"
-                    app:layout_constraintTop_toTopOf="@+id/pending_due" />
-
-                <TextView
-                    android:id="@+id/emi_label"
-                    android:layout_width="@dimen/zero"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/thirty_six"
-                    android:elevation="@dimen/ten"
-                    android:text="@string/emi_label"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintBottom_toTopOf="@+id/phone"
-                    app:layout_constraintStart_toEndOf="@+id/emi"
-                    app:layout_constraintTop_toBottomOf="@+id/pending_due_label" />
-
-                <ImageView
-                    android:id="@+id/customer_imageView"
-                    android:layout_width="@dimen/hundred"
-                    android:layout_height="@dimen/hundred"
-                    android:layout_marginStart="@dimen/twenty_four"
-                    android:layout_marginBottom="@dimen/twenty_four"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/ic_user"
+                    app:errorEnabled="true"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintEnd_toStartOf="@+id/to_text_input_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="@dimen/seventy"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/from"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/from"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/to_text_input_layout"
+                    android:layout_width="@dimen/zero"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/ten"
-                    android:layout_marginTop="@dimen/sixteen"
-                    android:paddingStart="@dimen/five"
-                    android:paddingEnd="@dimen/five"
-                    android:text="@string/name"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintStart_toEndOf="@+id/customer_imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/amount_label" />
+                    android:layout_marginStart="@dimen/sixteen"
+                    app:errorEnabled="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/submit"
+                    app:layout_constraintStart_toEndOf="@+id/from_text_input_Layout"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/name_label"
-                    android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/to"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/to"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="@dimen/zero"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/twenty"
-                    android:maxLines="2"
-                    android:text="@string/name_label"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintStart_toEndOf="@+id/name"
-                    app:layout_constraintTop_toBottomOf="@+id/emi" />
-
-                <TextView
-                    android:id="@+id/mobile_no"
-                    android:layout_width="@dimen/seventy"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/ten"
-                    android:layout_marginTop="@dimen/sixteen"
-                    android:paddingStart="@dimen/five"
-                    android:paddingEnd="@dimen/five"
-                    android:text="@string/mobile_no"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintStart_toEndOf="@+id/customer_imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/name" />
-
-                <TextView
-                    android:id="@+id/mobile_no_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/fifteen_point_five"
-                    android:text="@string/mobile_no_label"
-                    android:textAlignment="viewStart"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintStart_toEndOf="@+id/mobile_no"
-                    app:layout_constraintTop_toBottomOf="@+id/name_label" />
-
-                <ImageView
-                    android:id="@+id/phone"
-                    android:layout_width="@dimen/thirty_five"
-                    android:layout_height="@dimen/thirty_five"
                     android:layout_marginEnd="@dimen/twenty"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/ic_call"
-                    app:layout_constraintBottom_toBottomOf="@+id/mobile_no_label"
+                    android:background="@drawable/rounded_button"
+                    android:text="@string/submit"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/mobile_no_label" />
-
-                <TextView
-                    android:id="@+id/vehicle_no"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/ten"
-                    android:layout_marginTop="@dimen/sixteen"
-                    android:paddingStart="@dimen/five"
-                    android:paddingEnd="@dimen/five"
-                    android:text="@string/vehicle_no"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintStart_toEndOf="@+id/customer_imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/mobile_no" />
-
-                <TextView
-                    android:id="@+id/vehicle_no_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/sixteen"
-                    android:text="@string/vehicle_no_label"
-                    android:textSize="@dimen/fifteen_sp"
-                    app:layout_constraintStart_toEndOf="@+id/vehicle_no"
-                    app:layout_constraintTop_toBottomOf="@+id/mobile_no_label" />
+                    app:layout_constraintStart_toEndOf="@+id/to_text_input_layout"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/count_label"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/five"
+            android:layout_marginTop="@dimen/ten"
+            android:text="@string/count"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sixteen_sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/count"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/from_to_view" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sixteen_sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/count_label"
+            app:layout_constraintTop_toBottomOf="@+id/from_to_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPending"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero"
+            android:layout_marginTop="@dimen/ten"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/count" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/fifteen_dp"
+            android:padding="@dimen/ten"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/recyclerViewPending"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recyclerViewPending" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

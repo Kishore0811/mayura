@@ -1,12 +1,11 @@
 package com.primemover.mayura.api
 
+import com.primemover.mayura.constants.Utils.BASE_URL
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object APIClient {
-
-    private const val  BASE_URL = "http://primeaccounts.in/mayura/index.php/api/"
 
     private val okHttpClient= OkHttpClient.Builder()
             .addInterceptor{chain ->

@@ -5,18 +5,18 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import android.widget.FrameLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.primemover.mayura.R
+import com.primemover.mayura.collection.CollectionActivity
 import com.primemover.mayura.constants.SharedPrefManager
+import com.primemover.mayura.constants.Utils.toastMessage
 import com.primemover.mayura.databinding.ActivityHomeBinding
 import com.primemover.mayura.emiCalculator.EmiCalculatorActivity
 import com.primemover.mayura.login.LoginActivity
@@ -69,7 +69,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
             }
             R.id.collection_cardView -> {
-                Toast.makeText(this, "Yet to implement", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, CollectionActivity::class.java)
+                startActivity(intent)
             }
 
         }
@@ -86,7 +87,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.logout_menu -> {
-                Log.i("TAG", "Logout button pressed")
+                //Log.i("TAG", "Logout button pressed")
                 logoutAccount()
                 true
             }
@@ -118,7 +119,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         ok.setOnClickListener {
             mDialog.dismiss()
 
-            Toast.makeText(this, getString(R.string.toast_logout), Toast.LENGTH_SHORT).show()
+            toastMessage(this, R.string.toast_logout)
+
             SharedPrefManager.getInstance(mCtx = this).clear()
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

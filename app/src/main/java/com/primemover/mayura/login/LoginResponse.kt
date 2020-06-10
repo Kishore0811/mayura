@@ -7,5 +7,4 @@ data class LoginResponse(val message: String,
                          val user_id: Int,
                          val user_name: String,
                          val user_type: String,
-                         val token: String): Serializable {
-}
+                         val token: String) : Serializable

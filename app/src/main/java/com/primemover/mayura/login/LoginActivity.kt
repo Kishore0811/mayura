@@ -4,15 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.snackbar.Snackbar
 import com.primemover.mayura.R
 import com.primemover.mayura.api.APIClient
 import com.primemover.mayura.constants.SharedPrefManager
+import com.primemover.mayura.constants.Utils.toastMessage
 import com.primemover.mayura.databinding.ActivityLoginBinding
 import com.primemover.mayura.home.HomeActivity
 import retrofit2.Call
@@ -43,7 +42,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, TextWatcher {
                 val password = binding.password.text.toString().trim()
 
                 if (username.isEmpty() && password.isEmpty()) {
-                    Toast.makeText(this, getString(R.string.empty_fields), Toast.LENGTH_SHORT).show()
+
+                    toastMessage(this, R.string.empty_fields)
 
                 } else {
 
@@ -54,7 +54,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, TextWatcher {
 
                                     // Timeout exception
                                     if (t is SocketTimeoutException) {
-                                        Toast.makeText(this@LoginActivity, getString(R.string.connection_out), Toast.LENGTH_SHORT).show()
+
+                                        toastMessage(this@LoginActivity, R.string.connection_out)
                                     }
 
                                     // Internet is turned off
@@ -69,11 +70,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, TextWatcher {
                                 override fun onResponse(call: Call<LoginResponse>,
                                                         response: Response<LoginResponse>) {
 
-                                    Log.i("Response", response.code().toString())
+//                                    Log.i("Response", response.code().toString())
                                     when (response.body()?.status) {
                                         204 -> {
-                                            Toast.makeText(this@LoginActivity,
-                                                    getString(R.string.wrong_credentials), Toast.LENGTH_SHORT).show()
+
+                                            toastMessage(this@LoginActivity, R.string.wrong_credentials)
                                         }
                                         200 -> {
                                             val storeUser = response.body()
@@ -84,8 +85,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, TextWatcher {
                                             SharedPrefManager.getInstance(this@LoginActivity)
                                                     .saveUser(storeUser!!)
 
-                                            Toast.makeText(this@LoginActivity, response.body()?.message,
-                                                    Toast.LENGTH_LONG).show()
+                                            toastMessage(this@LoginActivity, R.string.logged_in)
 
                                             val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or
@@ -95,8 +95,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, TextWatcher {
                                             finish()
                                         }
                                         else -> {
-                                            Toast.makeText(this@LoginActivity, response.body()?.message,
-                                                    Toast.LENGTH_LONG).show()
+                                            toastMessage(this@LoginActivity, R.string.incorrect)
+
                                             emptyData()
 
                                         }
