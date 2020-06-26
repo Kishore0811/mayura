@@ -51,6 +51,8 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
                 if (to < from) {
 
                     toastMessage(this, R.string.from_to_error)
+                } else if (from.isEmpty() && to.isEmpty()) {
+                    toastMessage(this, R.string.empty_fields)
                 } else {
 
                     pending_list_progressBar.visibility = View.VISIBLE
@@ -146,6 +148,12 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
     }
 
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        if (binding.from.text.isNullOrEmpty()) {
+            binding.from.error = getString(R.string.from_error)
+            return
+        } else {
+            binding.from.error = null
+        }
 
     }
 

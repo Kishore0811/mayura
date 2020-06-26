@@ -12,6 +12,9 @@ import com.primemover.mayura.R
 
 object Utils {
 
+    const val BASE_URL = "http://primeaccounts.in/mayura/index.php/api/"     //dev server
+    //const val  BASE_URL = "http://mayurafinance.in/mayura/index.php/api/"      //prod server
+
     fun hideSoftKeyBoard(context: Context, view: View) {
         try {
             val keyboard = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager

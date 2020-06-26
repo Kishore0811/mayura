@@ -18,18 +18,17 @@ import com.primemover.mayura.constants.Utils.toastMessage
 import com.primemover.mayura.databinding.AllPendinglistItemBinding
 import com.primemover.mayura.hpdetails.HpDetailsActivity
 
-class PendingHpAdapter(private val context: Context, private var pending: ArrayList<PendingHpResponse>) :
+class PendingHpAdapter(val context: Context, private var pending: ArrayList<PendingHpResponse>) :
         RecyclerView.Adapter<PendingHpAdapter.PendingHpViewHolder>() {
 
-    lateinit var allPendinglistItemBinding: AllPendinglistItemBinding
+    private lateinit var allPendingListItemBinding: AllPendinglistItemBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): PendingHpViewHolder {
 
-        allPendinglistItemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+        allPendingListItemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
                 R.layout.all_pendinglist_item, parent, false)
 
-
-        return PendingHpViewHolder(allPendinglistItemBinding, context, pending)
+        return PendingHpViewHolder(allPendingListItemBinding, pending)
 
     }
 
@@ -48,9 +47,8 @@ class PendingHpAdapter(private val context: Context, private var pending: ArrayL
         imageView(context, holder.binding.customerImageView, pending[position].image)
     }
 
-    class PendingHpViewHolder(val binding: AllPendinglistItemBinding,
-                              private val context: Context,
-                              private val pending: ArrayList<PendingHpResponse>)
+    inner class PendingHpViewHolder(val binding: AllPendinglistItemBinding,
+                                    private val pending: ArrayList<PendingHpResponse>)
         : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
         init {
@@ -66,7 +64,6 @@ class PendingHpAdapter(private val context: Context, private var pending: ArrayL
                     dial(dialPhone.mobile_no)
                 }
                 R.id.customer_info_cardView -> {
-                    //Toast.makeText(context, "Card clicked", Toast.LENGTH_SHORT).show()
                     val intent = Intent(context, HpDetailsActivity::class.java)
                     intent.putExtra("hpId", (pending[adapterPosition].hp_id))
                     context.startActivity(intent)

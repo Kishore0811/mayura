@@ -81,6 +81,7 @@
                     android:layout_width="@dimen/zero"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/twenty"
+                    android:layout_marginStart="@dimen/five"
                     android:background="@drawable/rounded_button"
                     android:text="@string/submit"
                     android:textColor="@color/colorWhite"
