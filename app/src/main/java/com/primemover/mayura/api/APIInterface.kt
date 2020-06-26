@@ -33,6 +33,6 @@ interface APIInterface {
     @POST("Hp/hpdetails")
     fun hpdetails(
             @Field("hp_id") hpId: String
-    ): Call<ArrayList<HpDetailsResponse>>
+    ): Call<HpDetailsResponse>
 
 }

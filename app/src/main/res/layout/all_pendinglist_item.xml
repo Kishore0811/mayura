@@ -66,6 +66,7 @@
                 android:text="@string/amount_label"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/fifteen_sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/amount"
                 app:layout_constraintTop_toBottomOf="@+id/hp_no_label" />
 
@@ -91,6 +92,7 @@
                 android:text="@string/pending_due_label"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/fifteen_sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/pending_due"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,6 +119,7 @@
                 android:text="@string/emi_label"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/fifteen_sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/view"
                 app:layout_constraintStart_toEndOf="@+id/emi"
                 app:layout_constraintTop_toBottomOf="@+id/pending_due_label" />
@@ -143,7 +146,7 @@
                 android:paddingStart="@dimen/five"
                 android:paddingEnd="@dimen/five"
                 android:text="@string/name"
-                android:textSize="@dimen/fourteen_sp"
+                android:textSize="@dimen/fifteen_sp"
                 app:layout_constraintBottom_toTopOf="@id/mobile_no"
                 app:layout_constraintEnd_toStartOf="@id/name_label"
                 app:layout_constraintStart_toEndOf="@+id/customer_imageView"
@@ -157,8 +160,9 @@
                 android:paddingStart="@dimen/five"
                 android:paddingEnd="@dimen/five"
                 android:text="@string/name_label"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/mobile_no_label"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/mobile_no_label"
                 app:layout_constraintStart_toEndOf="@+id/name"
                 app:layout_constraintTop_toTopOf="@+id/name" />
 
@@ -171,7 +175,7 @@
                 android:paddingStart="@dimen/five"
                 android:paddingEnd="@dimen/five"
                 android:text="@string/mobile_no"
-                android:textSize="@dimen/fourteen_sp"
+                android:textSize="@dimen/fifteen_sp"
                 app:layout_constraintBottom_toTopOf="@id/vehicle_no"
                 app:layout_constraintEnd_toStartOf="@id/mobile_no_label"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -186,6 +190,7 @@
                 android:paddingStart="@dimen/five"
                 android:paddingEnd="@dimen/five"
                 android:text="@string/mobile_no_label"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/vehicle_no_label"
                 app:layout_constraintEnd_toStartOf="@+id/phone"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -194,8 +199,8 @@
 
             <ImageView
                 android:id="@+id/phone"
-                android:layout_width="@dimen/twenty_five"
-                android:layout_height="@dimen/zero"
+                android:layout_width="@dimen/thirty_five"
+                android:layout_height="@dimen/thirty_five"
                 android:contentDescription="@string/todo"
                 android:src="@drawable/ic_call"
                 app:layout_constraintBottom_toBottomOf="@+id/mobile_no_label"
@@ -211,7 +216,7 @@
                 android:paddingStart="@dimen/five"
                 android:paddingEnd="@dimen/five"
                 android:text="@string/vehicle_no"
-                android:textSize="@dimen/fourteen_sp"
+                android:textSize="@dimen/fifteen_sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/vehicle_no_label"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -226,8 +231,9 @@
                 android:paddingStart="@dimen/five"
                 android:paddingEnd="@dimen/five"
                 android:text="@string/vehicle_no_label"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/mobile_no_label"
                 app:layout_constraintStart_toEndOf="@+id/vehicle_no"
                 app:layout_constraintTop_toBottomOf="@+id/mobile_no_label" />
         </androidx.constraintlayout.widget.ConstraintLayout>

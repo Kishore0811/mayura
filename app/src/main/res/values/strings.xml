@@ -62,7 +62,7 @@
     <string name="amount">Amount:</string>
     <string name="amount_label">amount_label</string>
     <string name="vehicle_no">Vehicle No</string>
-    <string name="vehicle_no_label">vehicle_label</string>
+    <string name="vehicle_no_label">label</string>
     <string name="pending_due">Pending Due:</string>
     <string name="pending_due_label">pd_label</string>
     <string name="hp_no">Hp No:</string>
@@ -73,6 +73,7 @@
 
     <!--    activity_collection-->
 
+    <string name="empty_data">Empty Data</string>
     <string name="hp_details">HP Details</string>
     <string name="new_hp">New HP</string>
     <string name="new_hp_label">new_hp_label</string>
@@ -90,6 +91,15 @@
     <string name="cheque_label">cheque_label</string>
     <string name="collection_amount">Collection Amount</string>
     <string name="collection_amount_label">collection_label</string>
+    <string name="precloser_details">Precloser Details</string>
+    <string name="penalty">Penalty</string>
+    <string name="penalty_label">penalty_label</string>
+    <string name="discount">Discount</string>
+    <string name="discount_label">discount_label</string>
+    <string name="paid_amount">Paid Amount</string>
+    <string name="paid_amount_label">paid_amount_label</string>
+    <string name="account">Account</string>
+    <string name="account_label">account_label</string>
 
     <!--    activity_emi_calculator-->
 
@@ -99,9 +109,9 @@
     <string name="duration">Duration</string>
     <string name="interest">Interest Rate</string>
     <string name="principal">Principal</string>
-    <string name="principal_label">principal_label</string>
+    <string name="principal_label">princi_label</string>
     <string name="interest_heading">Interest</string>
-    <string name="interest_label">interest_label</string>
+    <string name="interest_label">interest_lab</string>
     <string name="total">Total</string>
     <string name="total_label">total_label</string>
 
@@ -113,18 +123,9 @@
 
     <!--    activity_support-->
 
-    <string name="support_webview">Website: http://primemoversolutions.in</string>
+    <string name="support_webview">Website: https://primemoversolutions.in</string>
     <string name="phone_number">Phone: +91 9842703312</string>
-    <string name="version">Version: 1.0.0</string>
-    <string name="penalty">Penalty</string>
-    <string name="precloser_details">Precloser Details</string>
-    <string name="penalty_label">penalty_label</string>
-    <string name="discount">Discount</string>
-    <string name="discount_label">discount_label</string>
-    <string name="paid_amount">Paid Amount</string>
-    <string name="paid_amount_label">paid_amount_label</string>
-    <string name="account">Account</string>
-    <string name="account_label">account_label</string>
+    <string name="version">Version: 1.2.0</string>
 
     <!--    activity_hpdetails-->
 
@@ -136,13 +137,13 @@
     <string name="start_date_label">label</string>
     <string name="emi_hpdetails">EMI</string>
     <string name="vehicle_details">Vehicle Details</string>
-    <string name="vehicle_name">Vehicle Name</string>
+    <string name="vehicle_name">Name</string>
     <string name="vehicle_name_label">label</string>
     <string name="vehicle_color_label">label</string>
-    <string name="vehicle_color">Vehicle Color</string>
-    <string name="vehicle_make">Vehicle Make</string>
+    <string name="vehicle_color">Color</string>
+    <string name="vehicle_make">Make</string>
     <string name="party_details">Party Details</string>
-    <string name="party_name">Party Name</string>
+    <string name="party_name">Name</string>
     <string name="party_label">party_label</string>
     <string name="party_address">Address</string>
     <string name="party_address_label">address_label</string>
@@ -150,5 +151,15 @@
     <string name="occupation_label">occup_label</string>
     <string name="party_landmark">Landmark</string>
     <string name="party_landmark_label">landmark_label</string>
+    <string name="logging_in">Logging In</string>
+    <string name="error">Error Response</string>
+    <string name="error_number">Couldn\'t find number</string>
+    <string name="guarantee_details">Guarantee Details</string>
+    <string name="guarantor_name">Name</string>
+    <string name="guarantor_name_label">label</string>
+    <string name="guarantor_occupation_label">label</string>
+    <string name="data_not_found">Data Not Found</string>
+    <string name="hp_amount">Amount</string>
+    <string name="hp_pending_due">Pending Due</string>
 
 </resources>

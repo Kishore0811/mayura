@@ -11,6 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
+            android:theme="@style/ToolbarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -80,6 +81,7 @@
                     android:layout_width="@dimen/zero"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/twenty"
+                    android:layout_marginStart="@dimen/five"
                     android:background="@drawable/rounded_button"
                     android:text="@string/submit"
                     android:textColor="@color/colorWhite"
@@ -90,35 +92,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/count_label"
-            android:layout_width="@dimen/zero"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/five"
-            android:layout_marginTop="@dimen/ten"
-            android:text="@string/count"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sixteen_sp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toStartOf="@id/count"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/from_to_view" />
-
-        <TextView
-            android:id="@+id/count"
-            android:layout_width="@dimen/zero"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/label"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sixteen_sp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@id/count_label"
-            app:layout_constraintTop_toBottomOf="@+id/from_to_view" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewPending"
             android:layout_width="match_parent"
@@ -128,10 +101,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/count" />
+            app:layout_constraintTop_toBottomOf="@+id/from_to_view" />
 
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/pending_list_progressBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="@dimen/fifteen_dp"
@@ -142,5 +115,6 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/recyclerViewPending" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

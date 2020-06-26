@@ -2,29 +2,26 @@ package com.primemover.mayura.api
 
 import com.primemover.mayura.constants.Utils.BASE_URL
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object APIClient {
+    val instance: APIInterface
+        get() {
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
 
-    private val okHttpClient= OkHttpClient.Builder()
-            .addInterceptor{chain ->
-                val original = chain.request()
+            val instance = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
-                val requestBuilder = original.newBuilder()
-                        .method(original.method(), original.body())
 
-                val request = requestBuilder.build()
-                chain.proceed(request)
-            }.build()
+            return Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(instance)
+                    .build()
+                    .create(APIInterface::class.java)
+        }
 
-    val instance: APIInterface by lazy{
-        val retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
-                .build()
 
-        retrofit.create(APIInterface::class.java)
-    }
 }

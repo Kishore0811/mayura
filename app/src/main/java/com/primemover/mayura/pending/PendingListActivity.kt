@@ -35,14 +35,12 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
         binding.submit.setOnClickListener(this)
         setSupportActionBar(binding.toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        binding.progressBar
-
     }
 
     override fun onClick(v: View?) {
 
         when (v!!.id) {
-            R.id.submit -> {
+            R.id.submit, R.id.to -> {
                 val from = binding.from.text.toString().trim()
                 val to = binding.to.text.toString().trim()
                 binding.to.clearFocus()
@@ -55,7 +53,7 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
                     toastMessage(this, R.string.from_to_error)
                 } else {
 
-                    progressBar.visibility = View.VISIBLE
+                    pending_list_progressBar.visibility = View.VISIBLE
 
                     APIClient.instance.pendinghp(from, to)
                             .enqueue(object : Callback<PendingHpResponse> {
@@ -63,34 +61,36 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
                                 override fun onFailure(call: Call<PendingHpResponse>,
                                                        t: Throwable) {
 
-                                    progressBar.visibility = View.GONE
-
-                                    Log.i("Kishore", t.message.toString())
+                                    Log.i("Pending failure", t.toString())
 
                                     //Timeout Exception
-                                    if (t is SocketTimeoutException) {
+                                    when (t) {
+                                        is SocketTimeoutException -> {
+                                            toastMessage(this@PendingListActivity, R.string.connection_out)
 
-                                        toastMessage(this@PendingListActivity, R.string.connection_out)
-
-
-                                    } else {
-                                        Snackbar.make(v, getString(R.string.internet_off), Snackbar.LENGTH_LONG)
-                                                .show()
+                                        }
+                                        is com.google.gson.stream.MalformedJsonException -> {
+                                            //t.printStackTrace()
+                                            Snackbar.make(v, getString(R.string.data_not_found),
+                                                    Snackbar.LENGTH_SHORT).show()
+                                        }
+                                        else -> {
+                                            Snackbar.make(v, getString(R.string.internet_off), Snackbar.LENGTH_LONG)
+                                                    .show()
+                                            binding.pendingListProgressBar.visibility = View.GONE
+                                        }
                                     }
                                 }
 
                                 override fun onResponse(call: Call<PendingHpResponse>,
                                                         response: Response<PendingHpResponse>) {
 
-                                    progressBar.visibility = View.GONE
-                                    binding.count.visibility = View.VISIBLE
-                                    binding.countLabel.visibility = View.VISIBLE
+                                    pending_list_progressBar.visibility = View.GONE
                                     recyclerViewPending.visibility = View.VISIBLE
-                                    //Log.i("Response Pending:", response.body().toString())
+                                    Log.i("Response Pending:", response.body().toString())
 
                                     //Storing the response
                                     val pendinglist = response.body()
-                                    binding.count.text = pendinglist?.hppending_count.toString()
 
                                     // Showing it in recyclerView
                                     pendinglist?.let {
