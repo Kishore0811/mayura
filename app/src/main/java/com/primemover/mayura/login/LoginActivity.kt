@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -71,7 +70,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, TextWatcher {
                                 override fun onResponse(call: Call<LoginResponse>,
                                                         response: Response<LoginResponse>) {
 
-                                    Log.i("Response", response.code().toString())
                                     binding.loginProgressBar.visibility = View.GONE
 
                                     when (response.body()?.status) {

@@ -39,7 +39,7 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
 
     override fun onClick(v: View?) {
 
-        when (v!!.id) {
+        when (v?.id) {
             R.id.submit, R.id.to -> {
                 val from = binding.from.text.toString().trim()
                 val to = binding.to.text.toString().trim()

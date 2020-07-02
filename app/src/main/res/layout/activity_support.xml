@@ -109,7 +109,7 @@
                     android:gravity="center"
                     android:paddingTop="@dimen/fifty"
                     android:paddingBottom="@dimen/fifty"
-                    android:text="@string/version"
+                    android:text="@string/label"
                     android:textSize="@dimen/fifteen_sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

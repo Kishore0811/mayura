@@ -1,7 +1,6 @@
 package com.primemover.mayura.hpdetails
 
 import android.Manifest
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -39,11 +38,10 @@ class HpDetailsActivity : AppCompatActivity(), View.OnClickListener {
 
         //Getting value from pending hp adapter
         val hpId = intent.getStringExtra("hpId")
-        Log.i("Hpid", hpId!!.toString())
 
         binding.progressHpdetails.visibility = View.VISIBLE
 
-        APIClient.instance.hpdetails(hpId).enqueue(object : Callback<HpDetailsResponse> {
+        APIClient.instance.hpdetails(hpId!!).enqueue(object : Callback<HpDetailsResponse> {
 
             override fun onFailure(call: Call<HpDetailsResponse>, t: Throwable) {
                 Log.i("Failure", t.toString())
@@ -66,7 +64,6 @@ class HpDetailsActivity : AppCompatActivity(), View.OnClickListener {
                 if (response.isSuccessful) {
                     binding.scrollView.visibility = View.VISIBLE
                     val details: HpDetailsResponse = response.body()!!
-                    Log.i("Response HpDetails", details.toString())
                     getHpdetails(details)
                     hpdetails = details
 
@@ -140,11 +137,10 @@ class HpDetailsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-    fun dial(number: String) {
+    private fun dial(number: String) {
         when {
             number == "" -> {
                 toastMessage(this, R.string.error_number)
-
                 return
             }
 
@@ -154,7 +150,7 @@ class HpDetailsActivity : AppCompatActivity(), View.OnClickListener {
                 this.startActivity(i)
             }
 
-            else -> ActivityCompat.requestPermissions(this as Activity, arrayOf(Manifest
+            else -> ActivityCompat.requestPermissions(this, arrayOf(Manifest
                     .permission.CALL_PHONE), 1)
         }
     }

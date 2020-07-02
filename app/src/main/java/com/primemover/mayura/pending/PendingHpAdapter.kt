@@ -58,10 +58,10 @@ class PendingHpAdapter(val context: Context, private var pending: ArrayList<Pend
 
         override fun onClick(v: View?) {
 
-            val dialPhone: PendingHpResponse = pending[adapterPosition]
+            val dialPhone: String = pending[adapterPosition].mobile_no
             when (v!!.id) {
                 R.id.phone -> {
-                    dial(dialPhone.mobile_no)
+                    dial(dialPhone)
                 }
                 R.id.customer_info_cardView -> {
                     val intent = Intent(context, HpDetailsActivity::class.java)
@@ -76,7 +76,6 @@ class PendingHpAdapter(val context: Context, private var pending: ArrayList<Pend
             when {
                 number == "" -> {
                     toastMessage(context, R.string.error_number)
-
                     return
                 }
                 context.checkSelfPermission(Manifest.permission.CALL_PHONE) == PackageManager
