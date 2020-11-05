@@ -11,9 +11,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.primemover.mayura.R
 import com.primemover.mayura.api.APIClient
 import com.primemover.mayura.constants.Utils.imageView
+import com.primemover.mayura.constants.Utils.imageViewVehicle
 import com.primemover.mayura.constants.Utils.toastMessage
 import com.primemover.mayura.databinding.ActivityHpdetailsBinding
 import retrofit2.Call
@@ -64,7 +66,8 @@ class HpDetailsActivity : AppCompatActivity(), View.OnClickListener {
                 if (response.isSuccessful) {
                     binding.scrollView.visibility = View.VISIBLE
                     val details: HpDetailsResponse = response.body()!!
-                    getHpdetails(details)
+                    getHpDetails(details)
+                    //showDueDetailsList(details)
                     hpdetails = details
 
                 } else {
@@ -90,7 +93,7 @@ class HpDetailsActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun getHpdetails(details: HpDetailsResponse) {
+    private fun getHpDetails(details: HpDetailsResponse) {
         binding.toolbar.title = details.hp.hp_no
 
         //Hp Details
@@ -102,13 +105,14 @@ class HpDetailsActivity : AppCompatActivity(), View.OnClickListener {
         binding.textEmiLabel.text = details.hp.emi.toString()
         binding.textPrincipalLabel.text = details.hp.principal
         binding.textPendingDueLabel.text = details.hp.pending_due
+        binding.textCeasedLabel.text = details.hp.cheazing_status
 
         //Vehicle Details
         binding.textVehicleNameLabel.text = details.vehicle.name
         binding.textVehicleColorLabel.text = details.vehicle.color
         binding.textVehicleMakeLabel.text = details.vehicle.make
         binding.textVehicleNumberLabel.text = details.vehicle.number
-        imageView(this, binding.imageVehicle, details.vehicle.vehicle_image)
+        imageViewVehicle(this, binding.imageVehicle, details.vehicle.vehicle_image)
 
         //Party Details
         binding.textPartyNameLabel.text = details.party.name
@@ -125,7 +129,20 @@ class HpDetailsActivity : AppCompatActivity(), View.OnClickListener {
         binding.textGuaranteeAddressLabel.text = details.guarantee.address
         binding.textGuaranteeLandmarkLabel.text = details.guarantee.landmark
         imageView(this, binding.imageGuarantee, details.guarantee.guarantee_image)
+
+        val dueDetailsAdapter = DueDetailsAdapter(details.hp_details)
+        binding.recyclerViewDueDetails.layoutManager = LinearLayoutManager(this)
+        binding.recyclerViewDueDetails.adapter = dueDetailsAdapter
+        dueDetailsAdapter.notifyDataSetChanged()
     }
+
+//    private fun showDueDetailsList(dueDetails: HpDetailsResponse) {
+//        val dueDetailsAdapter = DueDetailsAdapter( dueDetails)
+//        binding.recyclerViewDueDetails.layoutManager = LinearLayoutManager(this)
+//        binding.recyclerViewDueDetails.adapter = dueDetailsAdapter
+//        dueDetailsAdapter.notifyDataSetChanged()
+//    }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId

@@ -13,7 +13,7 @@ import com.primemover.mayura.R
 object Utils {
 
     //const val BASE_URL = "http://primeaccounts.in/mayura/index.php/api/"     //dev server
-    const val BASE_URL = "http://mayurafinance.in/mayura/index.php/api/"      //prod server
+//    const val BASE_URL = "http://mayurafinance.in/mayura/index.php/api/"      //prod server
 
     fun hideSoftKeyBoard(context: Context, view: View) {
         try {
@@ -28,6 +28,18 @@ object Utils {
         var requestOptions = RequestOptions()
         requestOptions = requestOptions
                 .placeholder(R.drawable.ic_profile)
+                .centerCrop()
+        Glide.with(context)
+                .asBitmap()
+                .load(bitmap)
+                .apply(requestOptions)
+                .into(imageView)
+    }
+
+    fun imageViewVehicle(context: Context, imageView: ImageView, bitmap: Any) {
+        var requestOptions = RequestOptions()
+        requestOptions = requestOptions
+                .placeholder(R.drawable.ic_vehicle)
                 .centerCrop()
         Glide.with(context)
                 .asBitmap()

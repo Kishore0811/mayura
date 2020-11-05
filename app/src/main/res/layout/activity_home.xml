@@ -10,7 +10,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/zero"
-            android:background="@color/colorAccent"
+            android:theme="@style/ToolbarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -81,9 +81,9 @@
                             android:paddingTop="@dimen/ten"
                             android:paddingBottom="@dimen/ten"
                             android:text="@string/pending_list"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/fifteen_sp"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -99,8 +99,8 @@
                     android:layout_margin="@dimen/five"
                     app:cardCornerRadius="@dimen/five"
                     app:cardElevation="@dimen/five"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/support_cardView"
+                    app:layout_constraintBottom_toBottomOf="@id/support_cardView"
+                    app:layout_constraintEnd_toStartOf="@+id/search_cardView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/pending_list_cardView">
 
@@ -128,9 +128,9 @@
                             android:paddingTop="@dimen/ten"
                             android:paddingBottom="@dimen/ten"
                             android:text="@string/collection"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/fifteen_sp"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -145,7 +145,6 @@
                     android:layout_margin="@dimen/five"
                     app:cardCornerRadius="@dimen/five"
                     app:cardElevation="@dimen/five"
-                    app:layout_constraintBottom_toTopOf="@+id/support_cardView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/pending_list_cardView"
                     app:layout_constraintTop_toTopOf="parent">
@@ -175,13 +174,57 @@
                             android:paddingTop="@dimen/ten"
                             android:paddingBottom="@dimen/ten"
                             android:text="@string/emicalc"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/fifteen_sp"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/emiCalc_imageView" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/search_cardView"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/five"
+                    app:cardCornerRadius="@dimen/five"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/collection_cardView"
+                    app:layout_constraintTop_toBottomOf="@+id/emiCalc_cardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/ten">
+
+                        <ImageView
+                            android:id="@+id/search_imageView"
+                            android:layout_width="@dimen/seventy_five"
+                            android:layout_height="@dimen/seventy_five"
+                            android:contentDescription="@string/todo"
+                            android:padding="@dimen/five"
+                            android:src="@drawable/ic_search"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/search_textView"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/ten"
+                            android:paddingBottom="@dimen/ten"
+                            android:text="@string/search"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/search_imageView" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -192,9 +235,9 @@
                     android:layout_margin="@dimen/five"
                     app:cardCornerRadius="@dimen/five"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/collection_cardView"
-                    app:layout_constraintTop_toBottomOf="@+id/emiCalc_cardView">
+                    app:layout_constraintEnd_toStartOf="@+id/search_cardView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/collection_cardView">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -220,9 +263,9 @@
                             android:paddingTop="@dimen/ten"
                             android:paddingBottom="@dimen/ten"
                             android:text="@string/support"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/fifteen_sp"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -231,6 +274,5 @@
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

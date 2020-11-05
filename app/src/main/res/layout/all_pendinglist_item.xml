@@ -178,7 +178,6 @@
                 android:textSize="@dimen/fifteen_sp"
                 app:layout_constraintBottom_toTopOf="@id/vehicle_no"
                 app:layout_constraintEnd_toStartOf="@id/mobile_no_label"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/customer_imageView"
                 app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -193,7 +192,6 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/vehicle_no_label"
                 app:layout_constraintEnd_toStartOf="@+id/phone"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/mobile_no"
                 app:layout_constraintTop_toBottomOf="@id/name" />
 
@@ -219,7 +217,6 @@
                 android:textSize="@dimen/fifteen_sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/vehicle_no_label"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/customer_imageView"
                 app:layout_constraintTop_toBottomOf="@+id/mobile_no" />
 

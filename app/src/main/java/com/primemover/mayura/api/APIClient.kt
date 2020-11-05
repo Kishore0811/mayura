@@ -1,6 +1,6 @@
 package com.primemover.mayura.api
 
-import com.primemover.mayura.constants.Utils.BASE_URL
+import com.primemover.mayura.BuildConfig.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

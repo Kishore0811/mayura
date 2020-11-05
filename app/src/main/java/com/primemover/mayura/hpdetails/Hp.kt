@@ -12,5 +12,6 @@ data class Hp(val hp_no: String,
               val start_date: String,
               val emi: Float,
               val principal: String,
-              val pending_due: String
+              val pending_due: String,
+              val cheazing_status: String
 ) : Parcelable

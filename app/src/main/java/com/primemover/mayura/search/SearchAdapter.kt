@@ -1,4 +1,4 @@
-package com.primemover.mayura.pending
+package com.primemover.mayura.search
 
 import android.Manifest
 import android.app.Activity
@@ -15,58 +15,57 @@ import androidx.recyclerview.widget.RecyclerView
 import com.primemover.mayura.R
 import com.primemover.mayura.constants.Utils.imageView
 import com.primemover.mayura.constants.Utils.toastMessage
-import com.primemover.mayura.databinding.AllPendinglistItemBinding
+import com.primemover.mayura.databinding.AllSearchItemBinding
 import com.primemover.mayura.hpdetails.HpDetailsActivity
 
-class PendingHpAdapter(val context: Context, private var pending: ArrayList<PendingHpResponse>) :
-        RecyclerView.Adapter<PendingHpAdapter.PendingHpViewHolder>() {
+class SearchAdapter(private val context: Context, private var searchResponse: ArrayList<SearchResponse>)
+    : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
-    private lateinit var allPendingListItemBinding: AllPendinglistItemBinding
+    private lateinit var binding: AllSearchItemBinding
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
+        binding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+                R.layout.all_search_item, parent, false)
 
-    override fun onCreateViewHolder(parent: ViewGroup, position: Int): PendingHpViewHolder {
-
-        allPendingListItemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
-                R.layout.all_pendinglist_item, parent, false)
-
-        return PendingHpViewHolder(allPendingListItemBinding, pending)
-
+        return SearchViewHolder(binding, searchResponse)
     }
 
-    override fun getItemCount(): Int = pending.size
+    override fun getItemCount(): Int {
+        return if (searchResponse.isNullOrEmpty()) {
+            0
+        } else {
+            searchResponse.size
+        }
+    }
 
-
-    override fun onBindViewHolder(holder: PendingHpViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         holder.setIsRecyclable(false)
-
-        allPendingListItemBinding.hpNoLabel.text = pending[position].hp_no
-        allPendingListItemBinding.amountLabel.text = pending[position].amount
-        allPendingListItemBinding.pendingDueLabel.text = pending[position].pending_dues
-        allPendingListItemBinding.emiLabel.text = pending[position].emi.toString()
-        allPendingListItemBinding.nameLabel.text = pending[position].name
-        allPendingListItemBinding.mobileNoLabel.text = pending[position].mobile_no
-        allPendingListItemBinding.vehicleNoLabel.text = pending[position].vehicle_no
-        imageView(context, holder.binding.customerImageView, pending[position].image)
+        binding.hpNoLabel.text = searchResponse[position].hp_no
+        binding.amountLabel.text = searchResponse[position].amount
+        binding.pendingDueLabel.text = searchResponse[position].pending_dues
+        binding.emiLabel.text = searchResponse[position].emi.toString()
+        binding.nameLabel.text = searchResponse[position].name
+        binding.mobileNoLabel.text = searchResponse[position].mobile_no
+        binding.vehicleNoLabel.text = searchResponse[position].vehicle_no
+        binding.ceasingLabel.text = searchResponse[position].cheazing_status
+        imageView(context, holder.binding.customerImageView, searchResponse[position].image)
     }
 
-    inner class PendingHpViewHolder(val binding: AllPendinglistItemBinding,
-                                    private val pending: ArrayList<PendingHpResponse>)
+    inner class SearchViewHolder(val binding: AllSearchItemBinding, private val searchResponse: ArrayList<SearchResponse>)
         : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
-
         init {
-            binding.phone.setOnClickListener(this)
             binding.customerInfoCardView.setOnClickListener(this)
+            binding.phone.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {
-
-            val dialPhone: String = pending[adapterPosition].mobile_no
+            val dialPhone: String = searchResponse[adapterPosition].mobile_no
             when (v!!.id) {
                 R.id.phone -> {
                     dial(dialPhone)
                 }
                 R.id.customer_info_cardView -> {
                     val intent = Intent(context, HpDetailsActivity::class.java)
-                    intent.putExtra("hpId", (pending[adapterPosition].hp_id))
+                    intent.putExtra("hpId", (searchResponse[adapterPosition].hp_id))
                     context.startActivity(intent)
                 }
             }
@@ -88,5 +87,6 @@ class PendingHpAdapter(val context: Context, private var pending: ArrayList<Pend
                         .permission.CALL_PHONE), 1)
             }
         }
+
     }
 }

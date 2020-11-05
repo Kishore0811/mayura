@@ -11,7 +11,6 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/zero"
-            android:background="@color/colorAccent"
             android:theme="@style/ToolbarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -250,10 +249,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/five"
                             android:layout_marginTop="@dimen/ten"
-                            android:layout_marginBottom="@dimen/five"
                             android:text="@string/hp_pending_due"
                             android:textSize="@dimen/fifteen_sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/text_ceased"
                             app:layout_constraintEnd_toStartOf="@id/text_pending_due_label"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/text_principal" />
@@ -267,10 +265,38 @@
                             android:text="@string/pending_due_label"
                             android:textSize="@dimen/fifteen_sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/text_ceased_label"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/text_pending_due"
                             app:layout_constraintTop_toBottomOf="@id/text_principal_label" />
+
+                        <TextView
+                            android:id="@+id/text_ceased"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/five"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/ceased_status"
+                            android:textSize="@dimen/fifteen_sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/text_ceased_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_pending_due" />
+
+                        <TextView
+                            android:id="@+id/text_ceased_label"
+                            android:layout_width="@dimen/zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginBottom="@dimen/five"
+                            android:text="@string/ceased_label"
+                            android:textSize="@dimen/fifteen_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_ceased"
+                            app:layout_constraintTop_toBottomOf="@id/text_pending_due_label" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -599,7 +625,6 @@
                     android:layout_margin="@dimen/ten"
                     app:cardCornerRadius="@dimen/ten"
                     app:cardElevation="@dimen/five"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/card_party">
@@ -766,6 +791,18 @@
                             app:layout_constraintTop_toBottomOf="@+id/text_guarantee_address_label" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_due_details"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_guarantee"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/all_due_items" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 

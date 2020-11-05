@@ -48,10 +48,11 @@ class PendingListActivity : AppCompatActivity(), View.OnClickListener, TextWatch
                 //To hide the keyboard
                 hideSoftKeyBoard(this, v)
 
-                if (to < from) {
-
-                    toastMessage(this, R.string.from_to_error)
-                } else if (from.isEmpty() && to.isEmpty()) {
+//                if (to < from) {
+//
+//                    toastMessage(this, R.string.from_to_error)
+//                } else
+                if (from.isEmpty() && to.isEmpty()) {
                     toastMessage(this, R.string.empty_fields)
                 } else {
 

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ten"
+        app:cardCornerRadius="@dimen/ten"
+        app:cardElevation="@dimen/eight">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_due_details"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:padding="@dimen/ten"
+                android:text="Due Details"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/fifteen_sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_due_date_label"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/five"
+                android:layout_marginTop="@dimen/ten"
+                android:text="Due Date"
+                android:textSize="@dimen/fifteen_sp"
+                app:layout_constraintBottom_toTopOf="@+id/text_receipt_number_label"
+                app:layout_constraintEnd_toStartOf="@id/text_due_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_due_details" />
+
+            <TextView
+                android:id="@+id/text_due_date"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:text="@string/label"
+                app:layout_constraintBottom_toBottomOf="@+id/text_due_date_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_due_date_label"
+                app:layout_constraintTop_toTopOf="@+id/text_due_date_label" />
+
+            <TextView
+                android:id="@+id/text_receipt_number_label"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/five"
+                android:layout_marginTop="@dimen/ten"
+                android:text="Receipt Number"
+                android:textSize="@dimen/fifteen_sp"
+                app:layout_constraintBottom_toTopOf="@id/text_amount_label"
+                app:layout_constraintEnd_toStartOf="@id/text_receipt_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_due_date_label" />
+
+            <TextView
+                android:id="@+id/text_receipt_number"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:text="@string/label"
+                app:layout_constraintBottom_toBottomOf="@+id/text_receipt_number_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_receipt_number_label"
+                app:layout_constraintTop_toTopOf="@+id/text_receipt_number_label" />
+
+            <TextView
+                android:id="@+id/text_amount_label"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/five"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginBottom="@dimen/ten"
+                android:text="Amount"
+                android:textSize="@dimen/fifteen_sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text_receipt_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_receipt_number_label" />
+
+            <TextView
+                android:id="@+id/text_amount"
+                android:layout_width="@dimen/zero"
+                android:layout_height="wrap_content"
+                android:text="@string/label"
+                app:layout_constraintBottom_toBottomOf="@+id/text_amount_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_amount_label"
+                app:layout_constraintTop_toTopOf="@+id/text_amount_label" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

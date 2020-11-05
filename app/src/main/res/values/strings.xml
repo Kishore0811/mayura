@@ -161,5 +161,10 @@
     <string name="data_not_found">Data Not Found</string>
     <string name="hp_amount">Amount</string>
     <string name="hp_pending_due">Pending Due</string>
+    <string name="search">Search</string>
+    <string name="ceased_status">Cheazed Status</string>
+    <string name="ceased_label">cheazed label</string>
+    <string name="cheazing">Cheazing</string>
+    <string name="no_item_found">No item found for this section or search</string>
 
 </resources>

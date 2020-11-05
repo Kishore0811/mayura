@@ -21,6 +21,7 @@ import com.primemover.mayura.databinding.ActivityHomeBinding
 import com.primemover.mayura.emiCalculator.EmiCalculatorActivity
 import com.primemover.mayura.login.LoginActivity
 import com.primemover.mayura.pending.PendingListActivity
+import com.primemover.mayura.search.SearchActivity
 import com.primemover.mayura.support.SupportActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -38,6 +39,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         binding.emiCalcCardView.setOnClickListener(this)
         binding.supportCardView.setOnClickListener(this)
         binding.collectionCardView.setOnClickListener(this)
+        binding.searchCardView.setOnClickListener(this)
         val str = ("1518/2,venkittapuram(signal),\nThadagam Main Rd,\nnear avila convent,\nCoimbatore-641025.")
         address_textView.text = str
 
@@ -72,6 +74,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.collection_cardView -> {
                 val ie = Intent(this, CollectionActivity::class.java)
+                startActivity(ie)
+            }
+            R.id.search_cardView -> {
+                val ie = Intent(this, SearchActivity::class.java)
                 startActivity(ie)
             }
 
